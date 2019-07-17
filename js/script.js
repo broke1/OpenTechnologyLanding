@@ -20,7 +20,6 @@ window.addEventListener('load',function () {
     let menu_present = document.querySelector('.menu-present');
 
     let bottom_achivment = {};
-    let array = [];
 
     let canvas = {};
     let number ={};
@@ -331,6 +330,78 @@ window.addEventListener('load',function () {
       }
 
 
+      
+      let ctx = document.querySelector('.preloader-canvas').getContext('2d');
+      ctx.lineWidth = 3;
+      ctx.strokeStyle="#ffffff";
+      ctx.fillStyle = "#ffffff";
+      let begin = 250;
+      let end = 250;
+      let x = 0;
+      let y = 0;
+      let flag_inter = 0;
+     
 
+
+     let main_inetrval =  setInterval(() => {
+        if (flag_inter == 0) {
+          x = getRandomInt(50, 450);
+          y = getRandomInt(50, 450);
+          createLine(x,y);
+          flag_inter = 1;
+        }
+        console.log('dfsdf');
+    }, 500);
+
+
+      setTimeout(() => {
+       
+      clearInterval(main_inetrval);
+      document.querySelector('.preloader').classList.add('preloader-hide');
+      
+      }, 3000);
+
+
+
+      function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min)) + min;
+      }
+      
+
+      function createLine(x,y) {
+        ctx.beginPath();
+        ctx.moveTo(begin, end);
+        createDirection(x,y);
+        
+      } 
+
+      function createDirection(x,y){
+          let i = 0;
+           
+          let difX = Math.round(parseInt(x - begin) / 100 * 20);
+          let difY = Math.round(parseInt(y - end) / 100 * 20);
+          
+          let inter = setInterval(() => {
+            if (i > 4) {
+              clearInterval(inter);
+              
+              ctx.arc(x, y, 3, 0, getRadians(360));
+              ctx.fill();
+              ctx.stroke();
+              ctx.closePath();
+              flag_inter = 0;
+            } else {
+              begin = begin + difX;
+              end = end + difY;
+              ctx.lineTo(begin, end);
+              ctx.stroke();
+              i++;
+            }
+            
+          }, 100);
+      }
+
+      
+     
 
 });

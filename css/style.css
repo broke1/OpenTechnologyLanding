@@ -28,7 +28,7 @@
   text-decoration: none;
 }
 
-.present, .about-product, .achivment, .form-section, .circles {
+.present, .about-product, .achivment, .form-section, .circles, .preloader {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -908,5 +908,24 @@ body {
 .modal-form-show .modal-form-show {
   opacity: 1;
   visibility: visible;
+}
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  z-index: 5;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  opacity: 1;
+  visibility: visible;
+}
+
+.preloader-hide {
+  opacity: 0;
+  visibility: hidden;
 }
 /*# sourceMappingURL=style.css.map */
