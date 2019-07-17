@@ -73,9 +73,9 @@
               </div>  
             </div>
     </section>
-    <section class="offer-block">
+    <section class="offer">
         <div class="container">
-            
+                <offer-items  v-for="offer in offers"  :offers="offer"></offer-items>
         </div>
 </section>
     <section class="footer">

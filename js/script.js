@@ -198,9 +198,92 @@ window.addEventListener('load',function () {
 
    
 
+    let hoverFunc = function(event) {
+     document.querySelectorAll('.offer-block').forEach(item=>{
+        item.classList.remove('offer-block-hover');
+     });
+     //console.log(this.$el);
+     this.$el.classList.add('offer-block-hover');
+     
+    }
 
+
+
+    Vue.component('offer-items', {
+      props: ['offers'],
+      template: `
+          <div class="offer-block" @mouseover="hover" >   
+              <p class="zagolovok-offer">{{offers.zagolovok}}</p>
+              <p class="text-offer">{{offers.text}}</p>
+          </div>
+      `,
+      methods: {
+        hover: hoverFunc
+        
+      },
+    })
+
+
+      new Vue({
+        el: '.offer',
+        data: {
+          offers: [
+              {  zagolovok: "Описание процесса номер 1",text: `Мы проектировали  свой код
+              так, чтобы любому человеку
+              было интуитивно понятно
+              как вводить команды Мы проектировали  свой код
+              так, чтобы любому человеку
+              было интуитивно понятно
+              как вводить команды Мы проектировали  свой код
+              так, чтобы любому человеку
+              было интуитивно понятно
+              как вводить командыМы проектировали  свой код
+              так, чтобы любому человеку
+              было интуитивно понятно
+              как вводить команды Мы проектировали  свой код
+              так, чтобы любому человеку
+              было интуитивно понятно
+              как вводить команды Мы проектировали  свой код
+              так, чтобы любому человеку
+              было интуитивно понятно
+              как вводить командыМы проектировали  свой код
+              так, чтобы любому человеку
+              было интуитивно понятно
+              как вводить команды Мы проектировали  свой код
+              так, чтобы любому человеку
+              было интуитивно понятно
+              как вводить команды Мы проектировали  свой код
+              так, чтобы любому человеку
+              было интуитивно понятно
+              как вводить команды`},
+              { zagolovok: "Описание процесса номер 2",text: `Мы проектировали  свой код
+              так, чтобы любому человеку
+              было интуитивно понятно
+              как вводить команды`},
+              {  zagolovok: "Описание процесса номер 3",text: `Мы проектировали  свой код
+              так, чтобы любому человеку
+              было интуитивно понятно
+              как вводить команды`},
+              {  zagolovok: "Описание процесса номер 4",text: `Мы проектировали  свой код
+              так, чтобы любому человеку
+              было интуитивно понятно
+              как вводить команды`}, 
+          ],
+        },
+        mounted: function() {
+        let top = 5;
+         document.querySelectorAll('.offer-block').forEach(item => {
+            top += 5;
+            item.style.top = top + "%";
+            item.style.left = top + "%";
+         });
+        }
+    })
 
     
+   
+
+    //test.hover = hoverFunc;
 
 
     function createCircle(canvas,number) {
@@ -350,7 +433,6 @@ window.addEventListener('load',function () {
           createLine(x,y);
           flag_inter = 1;
         }
-        console.log('dfsdf');
     }, 500);
 
 

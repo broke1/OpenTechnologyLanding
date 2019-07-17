@@ -683,9 +683,57 @@ body {
   opacity: 1;
 }
 
-.offer-block {
+.offer {
   background: white;
-  height: 900px;
+}
+
+.offer .container {
+  margin: 0 auto;
+  position: relative;
+  height: 800px;
+  -webkit-perspective: 3500px;
+          perspective: 3500px;
+  -webkit-transform-style: flat;
+          transform-style: flat;
+}
+
+.offer .container .offer-block {
+  width: 700px;
+  height: 550px;
+  border-radius: 5px;
+  border: 2px solid #4169E0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: white;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  z-index: 2;
+  opacity: 0.6;
+  -webkit-transform: rotateY(30deg);
+          transform: rotateY(30deg);
+}
+
+.offer .container .offer-block .zagolovok-offer {
+  padding: 30px;
+  border-bottom: 2px solid #4169E0;
+  font-weight: bold;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 25px;
+}
+
+.offer .container .offer-block .text-offer {
+  padding: 30px;
+  font-family: "OpenSans", sans-serif;
+  font-size: 18px;
+  line-height: 180%;
+  height: 330px;
+  overflow-y: scroll;
+}
+
+.offer .container .offer-block-hover {
+  z-index: 3;
+  opacity: 1;
 }
 
 .footer {

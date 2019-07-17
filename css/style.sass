@@ -593,9 +593,53 @@ body
         .circle-block-show
             opacity: 1
                 
-.offer-block
+.offer
     background: $white
-    height: 900px
+   
+    .container
+        margin: 0 auto
+        position: relative
+        height: 800px
+        perspective: 3500px
+        transform-style: flat
+
+
+        .offer-block
+            width: 700px
+            height: 550px
+            border-radius: 5px
+            border: 2px solid $blue
+            position: absolute
+            top: 0
+            left: 0
+            background: $white
+            transition: $transition
+            z-index: 2
+            opacity: 0.6
+            transform: rotateY(30deg)
+            
+
+            .zagolovok-offer
+                padding: 30px
+                border-bottom: 2px solid $blue
+                font-weight: bold
+                font-family: "Ubuntu", sans-serif
+                font-size: 25px
+                
+            .text-offer
+                padding: 30px
+                font-family: "OpenSans", sans-serif
+                font-size: 18px
+                line-height: 180%
+                height: 330px
+                overflow-y: scroll
+
+        .offer-block-hover
+            z-index: 3
+            opacity: 1
+
+
+        
 
 .footer
     background: $white
