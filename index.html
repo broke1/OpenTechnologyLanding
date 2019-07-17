@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Открытые технологии</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+    <script src="js/vue.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <section class="present">
+        <div class="zaglushka"></div>
+        <div class="behind-block">
+                <div class="menu-present">
+                        <div class="container">
+                            <div class="contact-present">
+                                <div class="phone">
+                                      <i class="fa fa-phone-square-alt fa-fw"></i><a href="tel:9122342334">+7 (912) 234-23-34</a>
+                                </div>
+                                <div class="email">
+                                        <i class="fa fa-envelope fa-fw"></i><a href="mailto:9122342334">opentechnology.ru</a>
+                                </div>
+                            </div>
+                            <div class="text-block">
+                                    <div class="zagolovok">{{zagolovok}}</div>
+                                    <div class="about-present" >{{about}}</div>
+                            </div>
+                            <div class="button-present" >Заказать <br> демонстрацию</div>
+                        </div>
+                    </div>
+        </div>
+    </section>
+    <section class="about-product">
+        <div class="container">
+            <div class="left-block">
+                <p class="first_row">Open Technology Landing это - </p>
+                <p>не просто удобное решение для аналитики нейронных сетей, это так же визуализация результатов работы 
+                    нейронных сетей в виде, удобным для любого инженера. Вам просто надо ввести исходные данные в предложенные условия
+                и на выходе увидите результат работы скрипта.</p>
+            </div>
+            <div class="right-block">
+                <img src="img/img-about.png">
+            </div>
+        </div>
+    </section>
+    <section class="achivment">
+            <div class="zaglushka"></div>
+            <div class="container">
+                <achive-items v-for="achivment in achivments" :achivments="achivment"></achive-items>
+            </div>
+    </section>
+    <section class="form-section">
+            <div class="container">
+                <div class="left-block">
+                    <modal-form  :settings="settings"></modal-form>
+                </div>
+                <div class="right-block">
+                    <p class="zagolovok">Закажите бесплатную демонстрацию</p>
+                    <p class="text">Оставьте свои контактные данные, мы перезвоним и расскажем вам о всех преимуществах нашей системы</p>
+                </div>
+            </div>
+    </section>
+    <section class="circles">
+            <div class="zaglushka"></div>
+            <div class="container">
+              <div class="circle-block" v-for="circle in circles">
+                    <canvas class="circle" width="300" height="300" ></canvas>
+                    <p class="circle-numbers">{{circle.number}}</p>
+                    <p class="about-numbers">Запросов в секунду</p>
+              </div>  
+            </div>
+    </section>
+    <section class="offer-block">
+        <div class="container">
+            
+        </div>
+</section>
+    <section class="footer">
+            <div class="container">
+                <p>Open Technology 2019</p>
+            </div>
+    </section>
+    <article class="modal-form-show">
+        <div class="modal-form">
+            <div class="shadow-back"></div>
+            <modal-form  :settings="settings"></modal-form>
+        </div>
+    </article>
+</body>
+</html>

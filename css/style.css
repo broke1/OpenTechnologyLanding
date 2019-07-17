@@ -1,0 +1,912 @@
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../fonts/Ubuntu/Ubuntu-Regular.ttf");
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: url("../fonts/Open_Sans/OpenSans-Regular.ttf");
+}
+
+.present .zaglushka, .achivment .zaglushka, .circles .zaglushka {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 0;
+}
+
+.present .behind-block .menu-present .container .contact-present .phone a, .present .behind-block .menu-present .container .contact-present .email a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+.present .behind-block .menu-present .container .contact-present .phone a:hover, .present .behind-block .menu-present .container .contact-present .email a:hover {
+  text-decoration: none;
+}
+
+.present, .about-product, .achivment, .form-section, .circles {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  width: 1140px;
+}
+
+.present {
+  width: 100%;
+  height: 950px;
+  position: relative;
+  background: url("../img/fon-present.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.present .behind-block {
+  width: 100%;
+  position: relative;
+}
+
+.present .behind-block .menu-present {
+  background-color: white;
+  opacity: 1;
+  height: 300px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.present .behind-block .menu-present .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 0;
+}
+
+.present .behind-block .menu-present .container .contact-present {
+  font-size: 20px;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease 0.3s;
+  transition: all 0.5s ease 0.3s;
+  position: absolute;
+  left: -50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.present .behind-block .menu-present .container .contact-present .phone {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 10px;
+}
+
+.present .behind-block .menu-present .container .contact-present .phone a {
+  margin-left: 10px;
+}
+
+.present .behind-block .menu-present .container .contact-present .phone .fa {
+  font-size: 20px;
+  color: #4169E0;
+}
+
+.present .behind-block .menu-present .container .contact-present .email {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.present .behind-block .menu-present .container .contact-present .email a {
+  margin-left: 10px;
+}
+
+.present .behind-block .menu-present .container .contact-present .email .fa {
+  font-size: 20px;
+  color: #4169E0;
+}
+
+.present .behind-block .menu-present .container .button-present {
+  padding: 10px 15px;
+  font-size: 20px;
+  background: #4169E0;
+  border-radius: 3px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease 0.3s;
+  transition: all 0.5s ease 0.3s;
+  position: absolute;
+  left: -50%;
+  cursor: pointer;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.present .behind-block .menu-present .container .text-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.present .behind-block .menu-present .container .text-block .zagolovok {
+  font-size: 45px;
+  font-weight: bold;
+  text-transform: capitalize;
+  margin: 30px 0;
+  text-align: center;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.present .behind-block .menu-present .container .text-block .about-present {
+  font-size: 25px;
+  opacity: 1;
+  position: relative;
+  top: auto;
+  font-family: "OpenSans", sans-serif;
+}
+
+.present .behind-block .fixed-menu-present {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: auto;
+  z-index: 4;
+  border-bottom: 2px solid #4169E0;
+  opacity: 0.9;
+}
+
+.present .behind-block .fixed-menu-present .container .contact-present {
+  opacity: 1;
+  position: relative;
+  left: auto;
+}
+
+.present .behind-block .fixed-menu-present .container .button-present {
+  opacity: 1;
+  position: relative;
+  left: auto;
+}
+
+.present .behind-block .fixed-menu-present .container .text-block .zagolovok {
+  font-size: 25px;
+  font-weight: bold;
+  text-transform: capitalize;
+  margin: 0;
+  text-align: center;
+}
+
+.present .behind-block .fixed-menu-present .container .text-block .about-present {
+  opacity: 0;
+  position: absolute;
+  top: -100px;
+}
+
+.about-product {
+  background: white;
+  width: 100%;
+  height: 600px;
+  position: relative;
+}
+
+.about-product .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.about-product .container .right-block {
+  width: 500px;
+  height: 350px;
+}
+
+.about-product .container .right-block img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.about-product .container .left-block {
+  font-size: 20px;
+  font-family: "OpenSans", sans-serif;
+  text-align: left;
+  width: 500px;
+}
+
+.about-product .container .left-block .first_row {
+  font-weight: bold;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 24px;
+}
+
+.achivment {
+  width: 100%;
+  height: auto;
+  position: relative;
+  background: url("../img/fon-numbers.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.achivment .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 80px 0;
+}
+
+.achivment .container .achivment-item {
+  width: 350px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  z-index: 1;
+  margin: 50px 0;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-transform: scale(0.7);
+          transform: scale(0.7);
+  opacity: 0;
+}
+
+.achivment .container .achivment-item .achivment-img {
+  width: auto;
+  height: auto;
+}
+
+.achivment .container .achivment-item .zagolovok-achivment {
+  font-weight: bold;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.achivment .container .achivment-item .text-achivment {
+  font-size: 18px;
+  font-family: "OpenSans", sans-serif;
+  text-align: left;
+  line-height: 140%;
+}
+
+.achivment .container .achivment-item:nth-child(2) {
+  -webkit-transition: all 0.5s ease 0.2s;
+  transition: all 0.5s ease 0.2s;
+}
+
+.achivment .container .achivment-item:nth-child(3) {
+  -webkit-transition: all 0.5s ease 0.4s;
+  transition: all 0.5s ease 0.4s;
+}
+
+.achivment .container .achivment-item:nth-child(5) {
+  -webkit-transition: all 0.5s ease 0.2s;
+  transition: all 0.5s ease 0.2s;
+}
+
+.achivment .container .achivment-item:nth-child(6) {
+  -webkit-transition: all 0.5s ease 0.4s;
+  transition: all 0.5s ease 0.4s;
+}
+
+.achivment .container .achivment-item-show {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  opacity: 1;
+}
+
+.form-section {
+  padding: 40px 0;
+  background: white;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  height: 400px;
+}
+
+.form-section .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.form-section .container .right-block .zagolovok {
+  font-weight: bold;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.form-section .container .right-block .text {
+  font-size: 18px;
+  font-family: "OpenSans", sans-serif;
+  text-align: left;
+  line-height: 140%;
+}
+
+.form-section .container .left-block {
+  width: 600px;
+}
+
+.form-section .container .left-block .modal-form-itself {
+  width: 550px;
+  height: auto;
+  min-height: 60px;
+  border-radius: 5px;
+  background: #ffffff;
+  margin: 0 20px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.form-section .container .left-block .modal-form-itself form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  height: auto;
+  position: relative;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.form-section .container .left-block .modal-form-itself form .form-item {
+  margin: 20px 0;
+}
+
+.form-section .container .left-block .modal-form-itself form input {
+  font-size: 18px;
+  font-family: "OpenSans", sans-serif;
+  text-align: left;
+  color: #333333;
+  padding: 5px;
+  width: 300px;
+  border-radius: 0px;
+  border: none;
+  border-bottom: 2px solid #4169E0;
+  padding-bottom: 15px;
+}
+
+.form-section .container .left-block .modal-form-itself form .button-send-modal {
+  padding: 10px 15px;
+  font-size: 20px;
+  background: #4169E0;
+  border-radius: 3px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  -webkit-transition: all 0.5s ease 0.3s;
+  transition: all 0.5s ease 0.3s;
+  cursor: pointer;
+  font-family: "Ubuntu", sans-serif;
+  margin: 0;
+}
+
+.form-section .container .left-block .modal-form-itself form .accept-block {
+  margin-top: 10px;
+}
+
+.form-section .container .left-block .modal-form-itself form .accept-block input[type=checkbox] {
+  display: none;
+  width: 10px;
+}
+
+.form-section .container .left-block .modal-form-itself form .accept-block input[type=checkbox]:checked + label:before {
+  border-right: none;
+  border-top: none;
+  -webkit-transform: rotate(-50deg);
+          transform: rotate(-50deg);
+  top: 2px;
+  left: 2px;
+  height: 5px;
+}
+
+.form-section .container .left-block .modal-form-itself form .accept-block input[type=checkbox] + label {
+  font-family: "OpenSans", sans-serif;
+  font-size: 14px;
+  line-height: 140%;
+  color: #333333;
+  padding-left: 30px;
+  position: relative;
+}
+
+.form-section .container .left-block .modal-form-itself form .accept-block input[type=checkbox] + label:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #333333;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.form-section .container .left-block .modal-form-itself form .description-accept {
+  font-family: "OpenSans", sans-serif;
+  font-size: 15px;
+  line-height: 180%;
+  margin: 10px 0;
+  text-align: center;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  opacity: 1;
+  visibility: vissible;
+  width: 100%;
+}
+
+.form-section .container .left-block .modal-form-itself form .hide {
+  opacity: 0;
+  visibility: hidden;
+  height: auto !important;
+}
+
+.form-section .container .left-block .modal-form-itself .description {
+  font-family: "OpenSans", sans-serif;
+  font-size: 25px;
+  text-align: center;
+  line-height: 180%;
+  color: #333333;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  margin: 50px auto;
+}
+
+.form-section .container .left-block .modal-form-itself .hide {
+  opacity: 0;
+  visibility: hidden;
+  margin: 0;
+  height: 0 !important;
+  padding: 0;
+}
+
+.circles {
+  width: 100%;
+  position: relative;
+  background: url("../img/fon-present.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.circles .container {
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 150px 0;
+}
+
+.circles .container .circle-block {
+  position: relative;
+  color: white;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.circles .container .circle-block .circle {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.circles .container .circle-block .circle-numbers {
+  font-weight: bold;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 30px;
+  text-align: center;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.circles .container .circle-block .about-numbers {
+  font-family: "OpenSans", sans-serif;
+  font-size: 15px;
+  text-align: center;
+  line-height: 180%;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.circles .container .circle-block-show {
+  opacity: 1;
+}
+
+.offer-block {
+  background: white;
+  height: 900px;
+}
+
+.footer {
+  background: white;
+  border-top: 2px solid #4169E0;
+}
+
+.footer .container {
+  margin: 0 auto;
+}
+
+.footer .container p {
+  font-family: "OpenSans", sans-serif;
+  font-size: 12px;
+  text-align: center;
+  line-height: 140%;
+  padding: 5px 0;
+}
+
+.modal-form-show .modal-form {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.modal-form-show .modal-form .shadow-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.modal-form-show .modal-form .modal-form-itself {
+  width: 550px;
+  height: auto;
+  min-height: 60px;
+  border-radius: 5px;
+  background: #ffffff;
+  margin: 0 20px;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.modal-form-show .modal-form .modal-form-itself .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  border: 3px solid #4169E0;
+  padding: 5px 0 3px 9px;
+  cursor: pointer;
+}
+
+.modal-form-show .modal-form .modal-form-itself form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  height: auto;
+  position: relative;
+  padding: 30px;
+  overflow: hidden;
+}
+
+.modal-form-show .modal-form .modal-form-itself form .zagolovok-form {
+  font-weight: bold;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.modal-form-show .modal-form .modal-form-itself form .form-item {
+  margin: 20px 0;
+}
+
+.modal-form-show .modal-form .modal-form-itself form input {
+  font-size: 18px;
+  font-family: "OpenSans", sans-serif;
+  text-align: left;
+  color: #333333;
+  padding: 5px;
+  width: 300px;
+  border-radius: 0px;
+  border: none;
+  border-bottom: 2px solid #4169E0;
+  padding-bottom: 15px;
+}
+
+.modal-form-show .modal-form .modal-form-itself form .button-send-modal {
+  padding: 10px 15px;
+  font-size: 20px;
+  background: #4169E0;
+  border-radius: 3px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  -webkit-transition: all 0.5s ease 0.3s;
+  transition: all 0.5s ease 0.3s;
+  cursor: pointer;
+  font-family: "Ubuntu", sans-serif;
+  margin: 0;
+}
+
+.modal-form-show .modal-form .modal-form-itself form .accept-block {
+  margin-top: 10px;
+}
+
+.modal-form-show .modal-form .modal-form-itself form .accept-block input[type=checkbox] {
+  display: none;
+  width: 10px;
+}
+
+.modal-form-show .modal-form .modal-form-itself form .accept-block input[type=checkbox]:checked + label:before {
+  border-right: none;
+  border-top: none;
+  -webkit-transform: rotate(-50deg);
+          transform: rotate(-50deg);
+  top: 2px;
+  left: 2px;
+  height: 5px;
+}
+
+.modal-form-show .modal-form .modal-form-itself form .accept-block input[type=checkbox] + label {
+  font-family: "OpenSans", sans-serif;
+  font-size: 14px;
+  line-height: 140%;
+  color: #333333;
+  padding-left: 30px;
+  position: relative;
+}
+
+.modal-form-show .modal-form .modal-form-itself form .accept-block input[type=checkbox] + label:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #333333;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.modal-form-show .modal-form .modal-form-itself form .description-accept {
+  font-family: "OpenSans", sans-serif;
+  font-size: 15px;
+  line-height: 180%;
+  margin: 10px 0;
+  text-align: center;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  opacity: 1;
+  visibility: vissible;
+  width: 100%;
+}
+
+.modal-form-show .modal-form .modal-form-itself form .hide {
+  opacity: 0;
+  visibility: hidden;
+  height: auto !important;
+}
+
+.modal-form-show .modal-form .modal-form-itself .description {
+  font-family: "OpenSans", sans-serif;
+  font-size: 25px;
+  text-align: center;
+  line-height: 180%;
+  color: #333333;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  margin: 50px auto;
+}
+
+.modal-form-show .modal-form .modal-form-itself .hide {
+  opacity: 0;
+  visibility: hidden;
+  margin: 0;
+  height: 0 !important;
+  padding: 0;
+}
+
+.modal-form-show .modal-form-show {
+  opacity: 1;
+  visibility: visible;
+}
+/*# sourceMappingURL=style.css.map */
