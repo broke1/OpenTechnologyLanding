@@ -712,6 +712,8 @@ body {
   opacity: 0.6;
   -webkit-transform: rotateY(30deg);
           transform: rotateY(30deg);
+  -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
 }
 
 .offer .container .offer-block .zagolovok-offer {
@@ -734,6 +736,8 @@ body {
 .offer .container .offer-block-hover {
   z-index: 3;
   opacity: 1;
+  -webkit-transform: translateX(-70px) rotateY(0deg);
+          transform: translateX(-70px) rotateY(0deg);
 }
 
 .footer {

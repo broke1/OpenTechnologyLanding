@@ -197,12 +197,14 @@ window.addEventListener('load',function () {
     })
 
    
-
-    let hoverFunc = function(event) {
-     document.querySelectorAll('.offer-block').forEach(item=>{
+    let clearHover =  function () {
+      document.querySelectorAll('.offer-block').forEach(item=>{
         item.classList.remove('offer-block-hover');
      });
-     //console.log(this.$el);
+    }
+
+    let hoverFunc = function() {
+      clearHover();
      this.$el.classList.add('offer-block-hover');
      
     }
@@ -212,13 +214,15 @@ window.addEventListener('load',function () {
     Vue.component('offer-items', {
       props: ['offers'],
       template: `
-          <div class="offer-block" @mouseover="hover" >   
+          <div class="offer-block" @mouseover="hover" @mouseout="unhover">   
               <p class="zagolovok-offer">{{offers.zagolovok}}</p>
               <p class="text-offer">{{offers.text}}</p>
           </div>
       `,
       methods: {
-        hover: hoverFunc
+        hover: hoverFunc,
+        unhover: clearHover
+        
         
       },
     })
@@ -277,6 +281,9 @@ window.addEventListener('load',function () {
             item.style.top = top + "%";
             item.style.left = top + "%";
          });
+        },
+        methods: {
+          clearHover : clearHover
         }
     })
 
