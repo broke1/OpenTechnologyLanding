@@ -214,7 +214,7 @@ window.addEventListener('load',function () {
     Vue.component('offer-items', {
       props: ['offers'],
       template: `
-          <div class="offer-block" @mouseover="hover" @mouseout="unhover">   
+          <div class="offer-block" @mouseover="hover" @mouseout="unhover" @click="hover">   
               <p class="zagolovok-offer">{{offers.zagolovok}}</p>
               <p class="text-offer">{{offers.text}}</p>
           </div>
