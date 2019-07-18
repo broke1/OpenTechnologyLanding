@@ -26,6 +26,16 @@ window.addEventListener('load',function () {
 
     let flag = 0;
    
+    let magic_number = 200;
+    let magic_number_achivment = 150;
+
+    if (screen.width < 1000){
+      magic_number = -100;
+    }
+    if (screen.width < 500){
+      magic_number_achivment = 0;
+    }
+
     
     
 
@@ -47,22 +57,36 @@ window.addEventListener('load',function () {
             bottom_achivment = document.querySelectorAll('.achivment-item');
 
             bottom_achivment.forEach(function(item) {
-              if ((item.getBoundingClientRect().bottom - screen.height + 150) < 0) {
+              if ((item.getBoundingClientRect().bottom - screen.height +  magic_number_achivment) < 0) {
                   item.classList.add('achivment-item-show'); 
               }
            });  
 
             canvas = document.querySelectorAll('.circle');
 
+           
+
            canvas.forEach(item => {
               number = item.parentElement.querySelector('.circle-numbers');
-              if (number.getBoundingClientRect().bottom - screen.height + 200 <0) {
+
+              if (screen.width < 500) {
                 number.parentElement.classList.add('circle-block-show');
                 if (flag < 3) {
-                  createCircle(item,number); 
+                createCircle(item,number); 
                 }
                 flag += 1;
-              };    
+              } else {
+                    if (item.parentElement.parentElement.getBoundingClientRect().bottom - screen.height + magic_number < 0) {
+          
+                      number.parentElement.classList.add('circle-block-show');
+                      if (flag < 3) {
+                        createCircle(item,number); 
+                      }
+                      flag += 1;
+                    };   
+              }
+
+             
            });
 
           
@@ -75,7 +99,7 @@ window.addEventListener('load',function () {
                 bottom_achivment = document.querySelectorAll('.achivment-item');
 
                 bottom_achivment.forEach(function(item) {
-                  if ((item.getBoundingClientRect().bottom - screen.height + 150) > 0) {
+                  if ((item.getBoundingClientRect().bottom - screen.height +  magic_number_achivment) > 0) {
                       item.classList.remove('achivment-item-show'); 
                   }
                });  
@@ -276,10 +300,17 @@ window.addEventListener('load',function () {
         },
         mounted: function() {
         let top = 5;
+        let left = 10;
+        if (screen.width < 1000) {
+          left =0;
+        }
+        
          document.querySelectorAll('.offer-block').forEach(item => {
             top += 5;
+            left += 5;
             item.style.top = top + "%";
-            item.style.left = top + "%";
+            item.style.left = left + "%";
+           
          });
         },
         methods: {
@@ -287,10 +318,28 @@ window.addEventListener('load',function () {
         }
     })
 
+    let preloaderWidth = 500;
+    let preloaderHeight = 500;
+
+    if (screen.width < 500){
+      preloaderWidth = 300;
+      preloaderHeight = 300;
+    }
+
+    
+     new Vue ({
+      el: '.preloader-canvas',
+      data: {
+        width: preloaderWidth,
+        height: preloaderHeight
+      },
+      mounted: function() {
+        createPreloader();
+      }
+    });
+
     
    
-
-    //test.hover = hoverFunc;
 
 
     function createCircle(canvas,number) {
@@ -420,75 +469,84 @@ window.addEventListener('load',function () {
       }
 
 
-      
-      let ctx = document.querySelector('.preloader-canvas').getContext('2d');
-      ctx.lineWidth = 3;
-      ctx.strokeStyle="#ffffff";
-      ctx.fillStyle = "#ffffff";
-      let begin = 250;
-      let end = 250;
-      let x = 0;
-      let y = 0;
-      let flag_inter = 0;
-     
+      function createPreloader() {
 
-
-     let main_inetrval =  setInterval(() => {
-        if (flag_inter == 0) {
-          x = getRandomInt(50, 450);
-          y = getRandomInt(50, 450);
-          createLine(x,y);
-          flag_inter = 1;
-        }
-    }, 500);
-
-
-      setTimeout(() => {
        
-      clearInterval(main_inetrval);
-      document.querySelector('.preloader').classList.add('preloader-hide');
-      
-      }, 3000);
 
 
-
-      function getRandomInt(min, max) {
-        return Math.floor(Math.random() * (max - min)) + min;
-      }
-      
-
-      function createLine(x,y) {
-        ctx.beginPath();
-        ctx.moveTo(begin, end);
-        createDirection(x,y);
+        let ctx = document.querySelector('.preloader-canvas').getContext('2d');
+        ctx.lineWidth = 3;
+        ctx.strokeStyle="#ffffff";
+        ctx.fillStyle = "#ffffff";
+        let begin = 250;
+        let end = 250;
+        let x = 0;
+        let y = 0;
+        let flag_inter = 0;
+        let end_preloader = 450;
+        if (screen.width < 500) {
+          end_preloader = 250;
+        }
+  
+  
+       let main_inetrval =  setInterval(() => {
+          if (flag_inter == 0) {
+            x = getRandomInt(50, end_preloader);
+            y = getRandomInt(50, end_preloader);
+            createLine(x,y);
+            flag_inter = 1;
+          }
+      }, 500);
+  
+  
+        setTimeout(() => {
+         
+        clearInterval(main_inetrval);
+        document.querySelector('.preloader').classList.add('preloader-hide');
         
-      } 
-
-      function createDirection(x,y){
-          let i = 0;
-           
-          let difX = Math.round(parseInt(x - begin) / 100 * 20);
-          let difY = Math.round(parseInt(y - end) / 100 * 20);
+        }, 3000);
+  
+  
+  
+        function getRandomInt(min, max) {
+          return Math.floor(Math.random() * (max - min)) + min;
+        }
+        
+  
+        function createLine(x,y) {
+          ctx.beginPath();
+          ctx.moveTo(begin, end);
+          createDirection(x,y);
           
-          let inter = setInterval(() => {
-            if (i > 4) {
-              clearInterval(inter);
-              
-              ctx.arc(x, y, 3, 0, getRadians(360));
-              ctx.fill();
-              ctx.stroke();
-              ctx.closePath();
-              flag_inter = 0;
-            } else {
-              begin = begin + difX;
-              end = end + difY;
-              ctx.lineTo(begin, end);
-              ctx.stroke();
-              i++;
-            }
+        } 
+  
+        function createDirection(x,y){
+            let i = 0;
+             
+            let difX = Math.round(parseInt(x - begin) / 100 * 20);
+            let difY = Math.round(parseInt(y - end) / 100 * 20);
             
-          }, 100);
+            let inter = setInterval(() => {
+              if (i > 4) {
+                clearInterval(inter);
+                
+                ctx.arc(x, y, 3, 0, getRadians(360));
+                ctx.fill();
+                ctx.stroke();
+                ctx.closePath();
+                flag_inter = 0;
+              } else {
+                begin = begin + difX;
+                end = end + difY;
+                ctx.lineTo(begin, end);
+                ctx.stroke();
+                i++;
+              }
+              
+            }, 100);
+        }
       }
+      
 
       
      

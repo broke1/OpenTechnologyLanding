@@ -65,9 +65,15 @@ body {
   }
 }
 
+@media screen and (max-width: 430px) {
+  .container {
+    width: 100%;
+  }
+}
+
 .present {
   width: 100%;
-  height: 950px;
+  height: 100vh;
   position: relative;
   background: url("../img/fon-present.png");
   background-size: cover;
@@ -100,6 +106,12 @@ body {
   transition: all 0.5s ease;
 }
 
+@media screen and (max-width: 320px) {
+  .present .behind-block .menu-present {
+    height: auto;
+  }
+}
+
 .present .behind-block .menu-present .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -115,6 +127,12 @@ body {
       -ms-flex-align: center;
           align-items: center;
   padding: 10px 0;
+}
+
+@media screen and (max-width: 430px) {
+  .present .behind-block .menu-present .container {
+    position: relative;
+  }
 }
 
 .present .behind-block .menu-present .container .contact-present {
@@ -191,6 +209,12 @@ body {
   color: #4169E0;
 }
 
+@media screen and (max-width: 780px) {
+  .present .behind-block .menu-present .container .contact-present {
+    font-size: 16px;
+  }
+}
+
 .present .behind-block .menu-present .container .button-present {
   padding: 10px 15px;
   font-size: 20px;
@@ -224,6 +248,12 @@ body {
           align-items: center;
 }
 
+@media screen and (max-width: 430px) {
+  .present .behind-block .menu-present .container .text-block {
+    padding: 20px;
+  }
+}
+
 .present .behind-block .menu-present .container .text-block .zagolovok {
   font-size: 45px;
   font-weight: bold;
@@ -235,12 +265,42 @@ body {
   font-family: "Ubuntu", sans-serif;
 }
 
+@media screen and (max-width: 780px) {
+  .present .behind-block .menu-present .container .text-block .zagolovok {
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .present .behind-block .menu-present .container .text-block .zagolovok {
+    font-size: 25px;
+  }
+}
+
 .present .behind-block .menu-present .container .text-block .about-present {
   font-size: 25px;
   opacity: 1;
   position: relative;
   top: auto;
   font-family: "OpenSans", sans-serif;
+}
+
+@media screen and (max-width: 780px) {
+  .present .behind-block .menu-present .container .text-block .about-present {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .present .behind-block .menu-present .container .text-block .about-present {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .present .behind-block .menu-present .container .text-block .about-present {
+    font-size: 14px;
+  }
 }
 
 .present .behind-block .fixed-menu-present {
@@ -253,10 +313,35 @@ body {
   opacity: 0.9;
 }
 
+@media screen and (max-width: 430px) {
+  .present .behind-block .fixed-menu-present .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    padding: 10px 10px 0 10px;
+  }
+}
+
 .present .behind-block .fixed-menu-present .container .contact-present {
   opacity: 1;
   position: relative;
   left: auto;
+}
+
+@media screen and (max-width: 430px) {
+  .present .behind-block .fixed-menu-present .container .contact-present {
+    margin-right: 10px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .present .behind-block .fixed-menu-present .container .contact-present {
+    font-size: 14px;
+  }
 }
 
 .present .behind-block .fixed-menu-present .container .button-present {
@@ -265,12 +350,59 @@ body {
   left: auto;
 }
 
+@media screen and (max-width: 430px) {
+  .present .behind-block .fixed-menu-present .container .button-present {
+    padding: 8px 12px;
+    font-size: 13px;
+    margin-top: 10px;
+    width: 100vw;
+    text-align: center;
+    border-radius: 0;
+  }
+  .present .behind-block .fixed-menu-present .container .button-present br {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .present .behind-block .fixed-menu-present .container .text-block {
+    position: absolute;
+    top: -15px;
+    left: 0px;
+    width: 45vw;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .present .behind-block .fixed-menu-present .container .text-block {
+    top: -5px;
+  }
+}
+
 .present .behind-block .fixed-menu-present .container .text-block .zagolovok {
   font-size: 25px;
   font-weight: bold;
   text-transform: capitalize;
   margin: 0;
   text-align: center;
+}
+
+@media screen and (max-width: 780px) {
+  .present .behind-block .fixed-menu-present .container .text-block .zagolovok {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .present .behind-block .fixed-menu-present .container .text-block .zagolovok {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .present .behind-block .fixed-menu-present .container .text-block .zagolovok {
+    font-size: 14px;
+  }
 }
 
 .present .behind-block .fixed-menu-present .container .text-block .about-present {
@@ -302,9 +434,28 @@ body {
           align-items: center;
 }
 
+@media screen and (max-width: 430px) {
+  .about-product .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse;
+    width: 100%;
+  }
+}
+
 .about-product .container .right-block {
   width: 500px;
   height: 350px;
+}
+
+@media screen and (max-width: 430px) {
+  .about-product .container .right-block {
+    width: 100%;
+    height: auto;
+  }
 }
 
 .about-product .container .right-block img {
@@ -321,10 +472,54 @@ body {
   width: 500px;
 }
 
+@media screen and (max-width: 780px) {
+  .about-product .container .left-block {
+    font-size: 18px;
+    margin-right: 50px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .about-product .container .left-block {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .about-product .container .left-block {
+    font-size: 14px;
+  }
+}
+
 .about-product .container .left-block .first_row {
   font-weight: bold;
   font-family: "Ubuntu", sans-serif;
   font-size: 24px;
+}
+
+@media screen and (max-width: 780px) {
+  .about-product .container .left-block .first_row {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .about-product .container .left-block .first_row {
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .about-product .container .left-block .first_row {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .about-product .container .left-block p {
+    padding: 10px;
+  }
 }
 
 .achivment {
@@ -353,6 +548,13 @@ body {
       -ms-flex-align: start;
           align-items: flex-start;
   padding: 80px 0;
+}
+
+@media screen and (max-width: 780px) {
+  .achivment .container {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
 }
 
 .achivment .container .achivment-item {
@@ -439,6 +641,12 @@ body {
   height: 400px;
 }
 
+@media screen and (max-width: 430px) {
+  .form-section {
+    height: auto;
+  }
+}
+
 .form-section .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -457,12 +665,35 @@ body {
   transition: all 0.5s ease;
 }
 
+@media screen and (max-width: 780px) {
+  .form-section .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .form-section .container .right-block {
+    padding: 0 20px;
+  }
+}
+
 .form-section .container .right-block .zagolovok {
   font-weight: bold;
   font-family: "Ubuntu", sans-serif;
   font-size: 24px;
   margin-bottom: 10px;
   text-align: center;
+}
+
+@media screen and (max-width: 430px) {
+  .form-section .container .right-block .zagolovok {
+    font-size: 20px;
+  }
 }
 
 .form-section .container .right-block .text {
@@ -472,8 +703,20 @@ body {
   line-height: 140%;
 }
 
+@media screen and (max-width: 430px) {
+  .form-section .container .right-block .text {
+    font-size: 16px;
+  }
+}
+
 .form-section .container .left-block {
   width: 600px;
+}
+
+@media screen and (max-width: 430px) {
+  .form-section .container .left-block {
+    width: 100%;
+  }
 }
 
 .form-section .container .left-block .modal-form-itself {
@@ -494,6 +737,14 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+@media screen and (max-width: 430px) {
+  .form-section .container .left-block .modal-form-itself {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
 }
 
 .form-section .container .left-block .modal-form-itself form {
@@ -657,12 +908,30 @@ body {
   padding: 150px 0;
 }
 
+@media screen and (max-width: 780px) {
+  .circles .container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 .circles .container .circle-block {
   position: relative;
   color: white;
   opacity: 0;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
+}
+
+@media screen and (max-width: 780px) {
+  .circles .container .circle-block {
+    margin: 50px 20px 0 20px;
+  }
 }
 
 .circles .container .circle-block .circle {
@@ -715,6 +984,26 @@ body {
           transform-style: flat;
 }
 
+@media screen and (max-width: 430px) {
+  .offer .container {
+    height: auto;
+    -webkit-perspective: none;
+            perspective: none;
+    dipslay: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-top: 50px;
+  }
+}
+
 .offer .container .offer-block {
   width: 700px;
   height: 550px;
@@ -734,12 +1023,49 @@ body {
           box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
 }
 
+@media screen and (max-width: 780px) {
+  .offer .container .offer-block {
+    width: 600px;
+    height: 450px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .offer .container .offer-block {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+    position: relative;
+    width: 300px;
+    height: auto;
+    opacity: 1;
+    top: auto !important;
+    left: 50% !important;
+    -webkit-transform: translateX(-50%) !important;
+            transform: translateX(-50%) !important;
+    margin-bottom: 50px;
+  }
+}
+
 .offer .container .offer-block .zagolovok-offer {
   padding: 30px;
   border-bottom: 2px solid #4169E0;
   font-weight: bold;
   font-family: "Ubuntu", sans-serif;
   font-size: 25px;
+}
+
+@media screen and (max-width: 780px) {
+  .offer .container .offer-block .zagolovok-offer {
+    padding: 15px 30px;
+    margin: 0;
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .offer .container .offer-block .zagolovok-offer {
+    font-size: 18px;
+  }
 }
 
 .offer .container .offer-block .text-offer {
@@ -751,11 +1077,33 @@ body {
   overflow-y: scroll;
 }
 
+@media screen and (max-width: 780px) {
+  .offer .container .offer-block .text-offer {
+    height: 300px;
+    margin: 0;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .offer .container .offer-block .text-offer {
+    height: auto;
+    font-size: 14px;
+  }
+}
+
 .offer .container .offer-block-hover {
   z-index: 3;
   opacity: 1;
   -webkit-transform: translateX(-70px) rotateY(0deg);
           transform: translateX(-70px) rotateY(0deg);
+}
+
+@media screen and (max-width: 430px) {
+  .offer .container .offer-block-hover {
+    -webkit-transform: translateX(0px) rotateY(0deg);
+            transform: translateX(0px) rotateY(0deg);
+  }
 }
 
 .footer {
@@ -821,6 +1169,22 @@ body {
           justify-content: center;
 }
 
+@media screen and (max-width: 430px) {
+  .modal-form-show .modal-form .modal-form-itself {
+    width: 90vw;
+    margin: 0;
+    left: 5vw;
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .modal-form-show .modal-form .modal-form-itself {
+    top: 20%;
+  }
+}
+
 .modal-form-show .modal-form .modal-form-itself .close-btn {
   position: absolute;
   top: 10px;
@@ -856,6 +1220,12 @@ body {
   overflow: hidden;
 }
 
+@media screen and (max-width: 320px) {
+  .modal-form-show .modal-form .modal-form-itself form {
+    padding: 20px;
+  }
+}
+
 .modal-form-show .modal-form .modal-form-itself form .zagolovok-form {
   font-weight: bold;
   font-family: "Ubuntu", sans-serif;
@@ -863,6 +1233,12 @@ body {
   margin-bottom: 20px;
   text-align: center;
   background-color: #ffffff;
+}
+
+@media screen and (max-width: 320px) {
+  .modal-form-show .modal-form .modal-form-itself form .zagolovok-form {
+    font-size: 18px;
+  }
 }
 
 .modal-form-show .modal-form .modal-form-itself form .form-item {
@@ -880,6 +1256,12 @@ body {
   border: none;
   border-bottom: 2px solid #4169E0;
   padding-bottom: 15px;
+}
+
+@media screen and (max-width: 320px) {
+  .modal-form-show .modal-form .modal-form-itself form input {
+    width: 80vw;
+  }
 }
 
 .modal-form-show .modal-form .modal-form-itself form .button-send-modal {
