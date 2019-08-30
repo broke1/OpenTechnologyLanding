@@ -45,6 +45,7 @@ body
 
 .container
     width: 1140px
+    z-index: 1
 
     @media screen and (max-width: 1100px)
         width: 960px
@@ -57,7 +58,7 @@ body
 
 .present
     width: 100%
-    height: 100vh
+    height: auto
     position: relative
     @extend %flex-section
     background: url("../img/fon-present.png")
@@ -71,364 +72,514 @@ body
     .zaglushka
         @extend %zaglushka
 
+    .menu-block
+        width: 100%
+        height: auto
+        display: flex
+        flex-flow: row
+        justify-content: center
+        position: fixed
+        top: 0
+        left: 0
+        z-index: 2
+        background: transparent
+        transition: $transition
+        
+
+        .container
+            width: 1040px
+            margin: 50px auto
+            @extend %flex-section
+            flex-flow: row nowrap
+            justify-content: space-between
+            transition: $transition
+
+            img
+                width: 100px
+                height: 100px
+
+
+            .menu-btn-block
+                display: flex
+                flex-flow: row nowrap
+                justify-content: flex-start
+                align-items: center
+
+                .button-present
+                    padding: 15px 40px
+                    font-size: 20px
+                    border: $blue 5px solid
+                    box-shadow: 0 0 12px 7px rgba(65, 105, 224, 0.8)
+                    border-radius: 15px
+                    color: $white
+                    text-align: center
+                    cursor: pointer
+                    font-family: "Ubuntu", sans-serif
+                    position: relative
+                    margin-left: 100px
+
+                    &:after
+                        content: ''
+                        position: absolute
+                        top: 0
+                        left: 0
+                        width: 100%
+                        height: 100%
+                        box-shadow: inset 0 0 12px 7px rgba(65, 105, 224, 0.8)
+
+                .menu-itself
+                    display: flex
+                    flex-flow: row nowrap
+                    justify-content: flex-end
+                    align-items: center
+
+                    .menu-link
+                        display: block
+                        margin-left : 50px
+                        color: $white
+                        text-decoration: none
+                        font-family: "Ubuntu", sans-serif
+                        font-size: 20px
+                        position: relative
+
+                        &:before
+                            content: ''
+                            position: absolute
+                            bottom: -10px
+                            left: 0
+                            width: 0%
+                            height: 3px
+                            border-radius: 15px
+                            background: $blue
+                            transition: $transition
+                    
+                    .menu-link-hover
+
+                        &:before
+                            width: 100%
+
     .behind-block
         width: 100%
         position: relative
+        margin: 40vh 0 200px 0
 
-        .menu-present
-            background-color: $white
-            opacity: 1
-            height: 300px
-            width: 100%
-            display: flex
-            flex-flow: row nowrap
-            justify-content: center
-            transition: $transition
+        .container
+            width: 1040px
+            margin: 0 auto
 
-            @media screen and (max-width: 320px)
-                height: auto
+            .main-text
+                display: block
+                color: $white
+                font-family: "Ubuntu", sans-serif
+                font-size: 70px
+                text-transform: uppercase
+                margin-bottom: 50px
 
-            .container
-                display: flex
-                flex-flow: row nowrap
-                justify-content: space-between
-                align-items: center
-                padding: 10px 0 
-
-                @media screen and (max-width: 430px)
-                    position: relative
-
-                .contact-present
-                    font-size: 20px
-                    opacity: 0
-                    transition: $transition 0.3s
-                    position: absolute
-                    left: -50%
-                    display: flex
-                    flex-flow: column nowrap
-                    justify-content: center
-                    align-items: flex-start
-                    font-family: "Ubuntu", sans-serif
-
-                    .phone
-                        display: flex
-                        flex-flow: row nowrap
-                        justify-content: flex-start
-                        align-items: center
-                        margin-bottom: 10px
-
-                        a
-                            @extend %link 
-                            margin-left: 10px
-
-                        .fa
-                            font-size: 20px
-                            color: $blue
+            .not-main-text
+                display: block
+                color: $white
+                font-family: "OpenSans", sans-serif
+                font-size: 20px
+                width: 80%
 
 
-                    .email
-                        display: flex
-                        flex-flow: row nowrap
-                        justify-content: flex-start
-                        align-items: center
+        // .menu-present
+        //     background-color: $white
+        //     opacity: 1
+        //     padding: 30px 0
+        //     width: 100%
+        //     display: flex
+        //     flex-flow: row nowrap
+        //     justify-content: center
+        //     transition: $transition
 
-                        a
-                            @extend %link 
-                            margin-left: 10px
+        //     @media screen and (max-width: 320px)
+        //         height: auto
 
-                        .fa
-                            font-size: 20px
-                            color: $blue
+        //     .container
+        //         display: flex
+        //         flex-flow: row nowrap
+        //         justify-content: space-between
+        //         align-items: center
+        //         padding: 10px 0 
+
+        //         @media screen and (max-width: 430px)
+        //             position: relative
+
+        //         .contact-present
+        //             font-size: 20px
+        //             opacity: 0
+        //             transition: $transition 0.3s
+        //             position: absolute
+        //             left: -50%
+        //             display: flex
+        //             flex-flow: column nowrap
+        //             justify-content: center
+        //             align-items: flex-start
+        //             font-family: "Ubuntu", sans-serif
+
+        //             .phone
+        //                 display: flex
+        //                 flex-flow: row nowrap
+        //                 justify-content: flex-start
+        //                 align-items: center
+        //                 margin-bottom: 10px
+
+        //                 a
+        //                     @extend %link 
+        //                     margin-left: 10px
+
+        //                 .fa
+        //                     font-size: 20px
+        //                     color: $blue
+
+
+        //             .email
+        //                 display: flex
+        //                 flex-flow: row nowrap
+        //                 justify-content: flex-start
+        //                 align-items: center
+
+        //                 a
+        //                     @extend %link 
+        //                     margin-left: 10px
+
+        //                 .fa
+        //                     font-size: 20px
+        //                     color: $blue
+
+        //             @media screen and (max-width: 780px)
+        //                 font-size: 16px
+
+                        
+
+        //         // .button-present
+        //         //     padding: 10px 15px
+        //         //     font-size: 20px
+        //         //     background: $blue
+        //         //     border-radius: 3px
+        //         //     color: $white
+        //         //     font-weight: bold
+        //         //     text-align: center
+        //         //     opacity: 0
+        //         //     transition: $transition 0.3s
+        //         //     position: absolute
+        //         //     left: -50%
+        //         //     cursor: pointer
+        //         //     font-family: "Ubuntu", sans-serif
+
+        //         .text-block
+        //             display: flex
+        //             flex-flow: column nowrap
+        //             justify-content: center
+        //             align-items: center
+
+        //             @media screen and (max-width: 430px)
+        //                 padding: 20px
+                        
+
+        //             .zagolovok
+        //                 font-size: 45px
+        //                 font-weight: bold
+        //                 text-transform: capitalize
+        //                 margin: 30px 0 
+        //                 text-align: center
+        //                 transition: $transition
+        //                 font-family: "Ubuntu", sans-serif
+
+        //                 @media screen and (max-width: 780px)
+        //                     font-size: 40px
+
+        //                 @media screen and (max-width: 430px)
+        //                     font-size: 25px
+
+                        
+
+        //             .about-present
+        //                 font-size: 25px
+        //                 opacity: 1
+        //                 position: relative
+        //                 top: auto
+        //                 font-family: "OpenSans", sans-serif
+
+        //                 @media screen and (max-width: 780px)
+        //                     font-size: 20px
+
+        //                 @media screen and (max-width: 430px)
+        //                     font-size: 18px
+
+        //                 @media screen and (max-width: 320px)
+        //                     font-size: 14px
+
+        // .fixed-menu-present
+        //     position: fixed
+        //     top: 0
+        //     left: 0
+        //     height: auto
+        //     z-index: 4
+        //     border-bottom: 2px solid $blue
+        //     opacity: 0.9
+        //     padding: 0
+
+            // .container
+
+            //     @media screen and (max-width: 430px) 
+            //         flex-flow: column
+            //         align-items: flex-end
+            //         padding: 10px 10px 0 10px
+
+            //     .contact-present
+            //         opacity: 1
+            //         position: relative
+            //         left: auto
+
+
+            //         @media screen and (max-width: 430px)
+            //             margin-right: 10px
+
+            //         @media screen and (max-width: 320px)
+            //             font-size: 14px
+
+            //     .button-present
+            //         opacity: 1
+            //         position: relative
+            //         left: auto
+
+            //         @media screen and (max-width: 430px) 
+            //             padding: 8px 12px
+            //             font-size: 13px
+            //             margin-top: 10px
+            //             width: 100vw
+            //             text-align: center
+            //             border-radius: 0
+
+            //             br
+            //                 display: none
+
+            //     .text-block
+
+            //         @media screen and (max-width: 430px)     
+            //             position: absolute
+            //             top: -15px
+            //             left: 0px
+            //             width: 45vw
+                    
+            //         @media screen and (max-width: 370px)
+            //             top: -5px
+
+            //         .zagolovok
+            //             font-size: 25px
+            //             font-weight: bold
+            //             text-transform: capitalize
+            //             margin: 0
+            //             text-align: center
+
+            //             @media screen and (max-width: 780px)
+            //                 font-size: 20px
+
+            //             @media screen and (max-width: 370px)
+            //                 font-size: 18px
+
+            //             @media screen and (max-width: 320px)
+            //                 font-size: 14px
+                            
+
+            //         .about-present
+            //             opacity: 0
+            //             position: absolute
+            //             top: -100px
+                
+
+                    
+
+
+    .about-product  
+        width: 100% 
+        height: auto
+
+        .container
+            background: $white
+            margin: 0 auto
+            border-radius: 15px
+
+            @media screen and (max-width: 430px)
+                width: 100%
+
+            .about-item
+                padding: 50px  100px
+
+
+                // .right-block
+                //     width: 500px
+                //     height: 350px
+
+                //     @media screen and (max-width: 430px)
+                //         width: 100%
+                //         height: auto
+
+                //     img
+                //         width: 100%
+                //         height: 100%
+                //         object-fit: cover
+                    
+                .left-block
+                    font-size: 18px
+                    font-family: "OpenSans", sans-serif
+                    text-align: left
+                    width: 50%
+                    
 
                     @media screen and (max-width: 780px)
-                        font-size: 16px
-
-                        
-
-                .button-present
-                    padding: 10px 15px
-                    font-size: 20px
-                    background: $blue
-                    border-radius: 3px
-                    color: $white
-                    font-weight: bold
-                    text-align: center
-                    opacity: 0
-                    transition: $transition 0.3s
-                    position: absolute
-                    left: -50%
-                    cursor: pointer
-                    font-family: "Ubuntu", sans-serif
-
-                .text-block
-                    display: flex
-                    flex-flow: column nowrap
-                    justify-content: center
-                    align-items: center
+                        font-size: 18px
+                        margin-right: 50px
 
                     @media screen and (max-width: 430px)
-                        padding: 20px
-                        
-
-                    .zagolovok
-                        font-size: 45px
-                        font-weight: bold
-                        text-transform: capitalize
-                        margin: 30px 0 
-                        text-align: center
-                        transition: $transition
-                        font-family: "Ubuntu", sans-serif
-
-                        @media screen and (max-width: 780px)
-                            font-size: 40px
-
-                        @media screen and (max-width: 430px)
-                            font-size: 25px
-
-                        
-
-                    .about-present
-                        font-size: 25px
-                        opacity: 1
-                        position: relative
-                        top: auto
-                        font-family: "OpenSans", sans-serif
-
-                        @media screen and (max-width: 780px)
-                            font-size: 20px
-
-                        @media screen and (max-width: 430px)
-                            font-size: 18px
-
-                        @media screen and (max-width: 320px)
-                            font-size: 14px
-
-        .fixed-menu-present
-            position: fixed
-            top: 0
-            left: 0
-            height: auto
-            z-index: 4
-            border-bottom: 2px solid $blue
-            opacity: 0.9
-
-            .container
-
-                @media screen and (max-width: 430px) 
-                    flex-flow: column
-                    align-items: flex-end
-                    padding: 10px 10px 0 10px
-
-                .contact-present
-                    opacity: 1
-                    position: relative
-                    left: auto
-
-
-                    @media screen and (max-width: 430px)
-                        margin-right: 10px
+                        width: 100%
+                        margin-right: 0
 
                     @media screen and (max-width: 320px)
                         font-size: 14px
+                        
 
-                .button-present
-                    opacity: 1
-                    position: relative
-                    left: auto
+                    // .first_row
+                    //     font-weight: bold
+                    //     font-family: "Ubuntu", sans-serif
+                    //     font-size: 24px
 
-                    @media screen and (max-width: 430px) 
-                        padding: 8px 12px
-                        font-size: 13px
-                        margin-top: 10px
-                        width: 100vw
-                        text-align: center
-                        border-radius: 0
-
-                        br
-                            display: none
-
-                .text-block
-
-                    @media screen and (max-width: 430px)     
-                        position: absolute
-                        top: -15px
-                        left: 0px
-                        width: 45vw
-                    
-                    @media screen and (max-width: 370px)
-                        top: -5px
+                    //     @media screen and (max-width: 780px)
+                    //         font-size: 22px
+                            
+                    //     @media screen and (max-width: 430px)
+                    //         padding: 10px
+                        
+                    //     @media screen and (max-width: 320px)
+                    //         font-size: 20px
 
                     .zagolovok
-                        font-size: 25px
+                        font-family: "Ubuntu", sans-serif
+                        font-size: 50px
+                        margin-bottom: 20px
                         font-weight: bold
-                        text-transform: capitalize
-                        margin: 0
-                        text-align: center
+                        text-transform: uppercase
 
-                        @media screen and (max-width: 780px)
-                            font-size: 20px
-
-                        @media screen and (max-width: 370px)
-                            font-size: 18px
-
-                        @media screen and (max-width: 320px)
-                            font-size: 14px
-                            
-
-                    .about-present
-                        opacity: 0
-                        position: absolute
-                        top: -100px
-                
-
+            .slick-prev
+                position: absolute
+                top: 50%
+                left: 0px
+                background: transparent
+                border: none
                     
+                &:before
+                    content: '\f104'
+                    font-family: 'Font Awesome 5 Free'
+                    color: $white
+                    position: absolute
+                    font-weight: 900
+                    top: -20px
+                    left: -80px
+                    font-size: 70px
+                    opacity: 1
+                    cursor: pointer
+
+                @media screen and (max-width: 1600px)
+
+                    &:before
+                        left: -40px
 
 
-.about-product
-    @extend %flex-section   
-    background: $white
-    width: 100% 
-    height: 600px
-    position: relative
 
-    .container
-        display: flex
-        flex-flow: row nowrap
-        justify-content: space-between
-        align-items: center
+            .slick-next
+                position: absolute
+                top: 50%
+                right: 0px
+                background: transparent
+                border: none
 
-        @media screen and (max-width: 430px) 
-           flex-flow: column nowrap 
-           flex-direction: column-reverse
-           width: 100%
 
-        .right-block
-            width: 500px
-            height: 350px
+                &:before
+                    content: '\f105'
+                    font-family: 'Font Awesome 5 Free'
+                    color: $white
+                    position: absolute
+                    font-weight: 900
+                    top: -20px
+                    right: -80px
+                    font-size: 70px
+                    opacity: 1
+                    cursor: pointer 
 
-            @media screen and (max-width: 430px)
-                width: 100%
-                height: auto
+                @media screen and (max-width: 1600px)
 
-            img
-                width: 100%
-                height: 100%
-                object-fit: cover
-            
-        .left-block
-            font-size: 20px
-            font-family: "OpenSans", sans-serif
-            text-align: left
-            width: 500px
+                    &:before
+                        right: -40px 
+
+
+    .achivment
+        @extend %flex-section  
+        width: 100% 
+        height: auto
+        position: relative
+        
+    
+        .container
+            display: flex
+            flex-flow: row wrap
+            justify-content: space-around
+            align-items: flex-start
+            padding: 80px 0
 
             @media screen and (max-width: 780px)
-                font-size: 18px
-                margin-right: 50px
-
-            @media screen and (max-width: 430px)
-                width: 100%
-                margin-right: 0
-
-            @media screen and (max-width: 320px)
-                font-size: 14px
-                
-
-            .first_row
-                font-weight: bold
-                font-family: "Ubuntu", sans-serif
-                font-size: 24px
-
-                @media screen and (max-width: 780px)
-                    font-size: 22px
-                    
-                @media screen and (max-width: 430px)
-                    padding: 10px
-                
-                @media screen and (max-width: 320px)
-                    font-size: 20px
-
-            p
-                @media screen and (max-width: 430px)
-                    padding: 10px
-
-              
+                justify-content: space-around
 
 
+            .achivment-item
+                display: flex
+                flex-flow: column nowrap
+                justify-content: center
+                align-items: center
+                color: $white
+                z-index: 1
+                margin: 50px 0
+                transition: $transition
+                transform: scale(0.7)
+                opacity: 0
 
-.achivment
-    @extend %flex-section  
-    width: 100% 
-    height: auto
-    position: relative
-    background: url("../img/fon-numbers.png")
-    background-size: cover
-    background-position: center
-    background-repeat: no-repeat
-    background-attachment: fixed
-    
+                .achivment-img
+                    width: 100%
+                    height: auto
 
-    .zaglushka
-        @extend %zaglushka
-        
+                .zagolovok-achivment
+                    font-weight: bold
+                    font-family: "Ubuntu", sans-serif
+                    font-size: 24px
+                    margin-bottom: 10px
+                    text-align: center
+                    line-height: 30px
 
-    .container
-        display: flex
-        flex-flow: row wrap
-        justify-content: space-between
-        align-items: flex-start
-        padding: 80px 0
+                // .text-achivment
+                //     font-size: 18px
+                //     font-family: "OpenSans", sans-serif
+                //     text-align: left
+                //     line-height: 140%
 
-        @media screen and (max-width: 780px)
-            justify-content: space-around
+                &:nth-child(2)
+                    transition: $transition 0.2s
 
+                &:nth-child(3)
+                    transition: $transition 0.4s
 
-        .achivment-item
-            width: 350px
-            display: flex
-            flex-flow: column nowrap
-            justify-content: center
-            align-items: center
-            color: $white
-            z-index: 1
-            margin: 50px 0
-            transition: $transition
-            transform: scale(0.7)
-            opacity: 0
+                &:nth-child(5)
+                    transition: $transition 0.2s
 
-            .achivment-img
-                width: auto
-                height: auto
+                &:nth-child(6)
+                    transition: $transition 0.4s
 
-            .zagolovok-achivment
-                font-weight: bold
-                font-family: "Ubuntu", sans-serif
-                font-size: 24px
-                margin-bottom: 10px
+                // @media screen and (max-width: 1100px)
+                //     width: 300px
 
-            .text-achivment
-                font-size: 18px
-                font-family: "OpenSans", sans-serif
-                text-align: left
-                line-height: 140%
-
-            &:nth-child(2)
-                transition: $transition 0.2s
-
-            &:nth-child(3)
-                transition: $transition 0.4s
-
-            &:nth-child(5)
-                transition: $transition 0.2s
-
-            &:nth-child(6)
-                transition: $transition 0.4s
-
-            @media screen and (max-width: 1100px)
-                width: 300px
-
-        .achivment-item-show
-            transform: scale(1)
-            opacity: 1
+            .achivment-item-show
+                transform: scale(1)
+                opacity: 1
 
 .form-section
     padding: 40px 0
@@ -569,12 +720,11 @@ body
 
 
                     .button-send-modal
-                        padding: 10px 15px
+                        padding: 10px 40px
                         font-size: 20px
                         background: $blue
-                        border-radius: 3px
+                        border-radius: 15px
                         color: $white
-                        font-weight: bold
                         text-align: center
                         transition: $transition 0.3s
                         cursor: pointer
@@ -689,6 +839,168 @@ body
                         margin: 0
                         height: 0 !important
                         padding: 0
+
+.how-do
+    width: 100%
+    height: auto
+    background: url("../img/fon-numbers.png")
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+    background-attachment: fixed
+    position: relative
+
+    .zaglushka
+        @extend %zaglushka
+
+    .our-project
+        z-index: 1
+        position: relative
+
+        .container
+            margin: 0 auto
+
+            .zagolovok-project
+                font-family: "Ubuntu", sans-serif
+                font-size: 50px
+                color: $white
+                text-transform: uppercase
+                padding: 100px 0px 50px 100px
+
+            .obertka-block
+                padding: 50px
+
+                .project-block
+                    display: flex
+                    flex-flow: row wrap
+                    justify-content: space-between
+                    align-items: center
+                    position: relative
+                    width: 1040px
+                    height: 570px
+                    overflow: hidden
+                    
+
+                    .project-itself
+                        width: 400px
+                        height: 200px
+                        border-radius: 15px
+                        background: $white
+                        padding: 30px
+                        cursor: pointer
+                        position: absolute
+                        z-index: 0
+                        transition: $transition
+                        display: flex
+                        flex-flow: column nowrap
+                        justify-content: center
+                        align-items: center
+
+
+                        &:nth-child(1)
+                            top: 0
+                            left: 0
+                            opacity: 0
+                            transform: translateX(-200px)
+                            transition: $transition
+                            
+
+                        &:nth-child(2)
+                            top: 0
+                            right: 0
+                            opacity: 0
+                            transform: translateY(-200px)
+                            transition: $transition
+                            
+
+                        &:nth-child(3)
+                            bottom: 0
+                            left: 0
+                            opacity: 0
+                            transform: translateY(200px)
+                            transition: $transition
+
+                        &:nth-child(4)
+                            bottom: 0
+                            right: 0
+                            opacity: 0
+                            transform: translateX(200px)
+                            transition: $transition
+
+                        .zagolovok
+                            font-family: "Ubuntu", sans-serif
+                            font-size: 40px
+                            text-transform: uppercase
+                            margin-bottom: 30px
+                            font-weight: bold
+
+                        .text-project
+                            font-family: "OpenSans", sans-serif
+                            font-size: 20px
+                            margin-bottom: 50px
+
+                        .close-btn-project
+                            position: absolute
+                            top: 5px
+                            right: 5px
+                            width: 20px
+                            height: 20px;
+                            border-radius: 50px
+                            border: 3px solid $blue
+                            padding: 5px 0 3px 9px
+                            cursor: pointer
+                            opacity: 0
+                            transition: $transition 0.5s
+
+
+                    .project-full-itself
+                        width: 980px
+                        height: 510px
+                        z-index: 1
+                        transition: $transition
+
+                        .close-btn-project
+                            opacity: 1
+
+                    .project-full-show
+
+                        &:nth-child(1)
+                            opacity: 1
+                            transform: translateX(0px)
+                            transition: $transition
+                            
+
+                        &:nth-child(2)
+                            top: 0
+                            right: 0
+                            opacity: 1
+                            transform: translateY(0px)
+                            transition: $transition
+                            
+
+                        &:nth-child(3)
+                            bottom: 0
+                            left: 0
+                            opacity: 1
+                            transform: translateY(0px)
+                            transition: $transition 
+
+                        &:nth-child(4)
+                            bottom: 0
+                            right: 0
+                            opacity: 1
+                            transform: translateX(0px)
+                            transition: $transition
+                        
+
+
+
+               
+
+                    
+
+            
+
 
   
 .circles

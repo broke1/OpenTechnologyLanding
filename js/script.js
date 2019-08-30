@@ -1,23 +1,141 @@
 'use strict'
 
 window.addEventListener('load',function () {
+
+
+    new Vue ({
+      el: ".menu-block",
+      data: {
+          logo: 'img/figure.png',
+          menus: [
+            {
+              label: 'About us',
+              url: '.about-product'
+            },
+            {
+              label: 'Contact us',
+              url: '.form-section'
+            },
+            {
+              label: 'Just us',
+              url: '.offer'
+            }
+          ]
+      }
+  })
+
+  document.querySelectorAll(".menu-link").forEach( item => {
+        item.addEventListener('mouseover', () => {
+            item.classList.add("menu-link-hover");          
+        })
+        item.addEventListener('mouseout', () => {
+          item.classList.remove("menu-link-hover");          
+      })
+  });
+
+
+
+    
+      $(".menu-itself").on("click","a", function (event) {
+    
+              event.preventDefault();
+    
+       
+    
+              //забираем идентификатор бока с атрибута href
+    
+              let id  = $(this).attr('href'),
+    
+       
+    
+              //узнаем высоту от начала страницы до блока на который ссылается якорь
+    
+                  top = $(id).offset().top;
+    
+    
+              //анимируем переход на расстояние - top за 1500 мс
+    
+              $('body,html').animate({scrollTop: top}, 1000);
+    
+          });
+    
+    
+  
    
     new Vue ({
-        el: ".menu-present",
+        el: ".behind-block",
         data: {
-            zagolovok: "Open Technology Landing",
+            zagolovok: "Платформа Atlas",
             about: `Платформа окртытых технологий позиционирует себя, как удобное решение для людого аналитика. Преждоставляет широкий
             и удобный интерфейс для выоплнения разнообразных запросов`,
-            phone_seen: false,
-            button_seen: false,
-            about_seen: true
         }
     })
 
 
+    new Vue ({
+      el: ".slider-about",
+      data: {
+         abouts: [
+           {
+            img: "img/img-about.png",
+            zagolovok: "Your Rules Our Sml",
+            text: `
+                Предлагаемая базовая платформа вне комплексного подхода соответствует современному уровню
+                  развития систем предиктивной аналитики, которые существуют на глобальном рынке. <br><br>
+                  При этом дополнительным ее важным достоинством, способным обеспечить интерес пользователя,
+                  является то, что она свободно распространяется с открытым исходным кодом (Open Source).`
+            },
+            {
+              img: "img/img-about.png",
+              zagolovok: "Your Rules Our Sml",
+              text: `
+              Частью предлагаемой платформы являются язык SML и методика в базовой версии ее изложения. `
+            },
+            {
+              img: "img/img-about.png",
+              zagolovok: "Your Rules Our Sml",
+              text: `
+              Язык SML, являющийся частью предлагаемого комплексного решения, позволяет осуществлять интерпретируемость моделей.
+               В настоящий момент такая возможность не предоставляется никакими конкурентными платформе решениями.`
+            },
+            {
+              img: "img/img-about.png",
+              zagolovok: "Your Rules Our Sml",
+              text: `
+              ATLAS – это первое решение на глобальном рынке, которое вводит понятие миссии коллективной безопасности участников рынков в самых
+               разнообразных сегментах.
+               Создает эффективный инструмент для обеспечения данной миссии.`
+            },
+            {
+              img: "img/img-about.png",
+              zagolovok: "Your Rules Our Sml",
+              text: `
+              Платформа и модели на основе SML, реализуя подход коллективной безопасности,
+               гарантируют недопущение повторного возникновения инцидента, зарегистрированного на других объектах того же типа,
+                тем самым воплощая принцип “Не быть вторым!”. `
+            },
+            {
+              img: "img/img-about.png",
+              zagolovok: "Your Rules Our Sml",
+              text: `
+              В методике и SML реализован ряд сценариев, позволяющих описывать режимы нормального функционирования объектов,
+               что позволяет выявлять и прогнозировать отказы даже в том случае, когда таких отказов не наблюдалось в истории.`
+            },
+
+         ]
+      }
+  })
+
+  $('.slider-about').slick({
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  }); 
+
+
     let last_scroll = window.pageYOffset;
     let behind_block = document.querySelector('.behind-block');
-    let menu_present = document.querySelector('.menu-present');
+    //let menu_present = document.querySelector('.menu-present');
 
     let bottom_achivment = {};
 
@@ -37,22 +155,41 @@ window.addEventListener('load',function () {
     }
 
     
-    
+    let menu_block = document.querySelector('.menu-block');
 
 
     window.onscroll = () => {
 
 
          let current_scroll = window.pageYOffset;
+
+        
+         current_scroll == 0 ? menu_block.style.background = "transparent" : menu_block.style.background = "rgba(65, 105, 224, 0.6)"
+         current_scroll == 0 ? menu_block.querySelector(".container").style = "margin: 50px auto" : menu_block.querySelector(".container").style = "margin: 10px auto"
  
           if (current_scroll > last_scroll) {
 
-            menu_present = document.querySelector('.menu-present');
-            
-            if (behind_block.getBoundingClientRect().top < 0) {
-                menu_present.classList.add('fixed-menu-present');
+            // menu_present = document.querySelector('.menu-present');
 
+
+
+            document.querySelectorAll(".project-itself").forEach( (item,i) => {
+              let otstup = 0;
+              if (i == 1) {
+                otstup = 200;
+              }
+              if (i == 2) {
+                otstup = -200;
+              }
+              if ((item.getBoundingClientRect().bottom - screen.height +  magic_number_achivment + otstup) < 0) {
+                item.classList.add('project-full-show'); 
             }
+            });
+            
+            // if (behind_block.getBoundingClientRect().top < 0) {
+            //     menu_present.classList.add('fixed-menu-present');
+
+            // }
 
             bottom_achivment = document.querySelectorAll('.achivment-item');
 
@@ -92,9 +229,15 @@ window.addEventListener('load',function () {
           
             } else {
 
-                if (current_scroll < behind_block.getBoundingClientRect().top) {
-                    menu_present.classList.remove('fixed-menu-present');
+                // if (current_scroll < behind_block.getBoundingClientRect().top) {
+                //     menu_present.classList.remove('fixed-menu-present');
+                // }
+
+                document.querySelectorAll(".project-itself").forEach( item => {
+                  if ((item.getBoundingClientRect().bottom - screen.height +  magic_number_achivment) > 0) {
+                    item.classList.remove('project-full-show'); 
                 }
+                });
 
                 bottom_achivment = document.querySelectorAll('.achivment-item');
 
@@ -114,8 +257,7 @@ window.addEventListener('load',function () {
         template: `
             <div class="achivment-item">   
                 <div class="achivment-img"><img :src="achivments.img"></div>
-                <p class="zagolovok-achivment">{{achivments.zagolovok}}</p>
-                <p class="text-achivment">{{achivments.text}}</p>
+                <p class="zagolovok-achivment" v-html="achivments.zagolovok"></p>
             </div>
         `
       })
@@ -124,33 +266,41 @@ window.addEventListener('load',function () {
           el: '.achivment',
           data: {
             achivments: [
-                { img: "img/figure.png", zagolovok: "Легкость команд",text: `Мы проектировали  свой код
-                так, чтобы любому человеку
-                было интуитивно понятно
-                как вводить команды`},
-                { img: "img/figure.png", zagolovok: "Легкость команд",text: `Мы проектировали  свой код
-                так, чтобы любому человеку
-                было интуитивно понятно
-                как вводить команды`},
-                { img: "img/figure.png", zagolovok: "Легкость команд",text: `Мы проектировали  свой код
-                так, чтобы любому человеку
-                было интуитивно понятно
-                как вводить команды`},
-                { img: "img/figure.png", zagolovok: "Легкость команд",text: `Мы проектировали  свой код
-                так, чтобы любому человеку
-                было интуитивно понятно
-                как вводить команды`},
-                { img: "img/figure.png", zagolovok: "Легкость команд",text: `Мы проектировали  свой код
-                так, чтобы любому человеку
-                было интуитивно понятно
-                как вводить команды`},
-                { img: "img/figure.png", zagolovok: "Легкость команд",text: `Мы проектировали  свой код
-                так, чтобы любому человеку
-                было интуитивно понятно
-                как вводить команды`},  
+                { img: "img/figure.png", zagolovok: "Коллективная <br> безопасность"},
+                { img: "img/figure.png", zagolovok: "Искусственный <br> интеллект"},
+                { img: "img/figure.png", zagolovok: "Опыт <br> экспертов"},
             ],
           }
       })
+
+      new Vue({
+        el: '.project-block',
+        data: {
+          projects: [
+              { click: false, text: "Some text in the this block will contain mach more then we can possibly imagine", zagolovok: "PROJECT NAME"},
+              { click: false, text: "Some text in the this block will contain mach more then we can possibly imagine", zagolovok: "PROJECT NAME"},
+              { click: false, text: "Some text in the this block will contain mach more then we can possibly imagine", zagolovok: "PROJECT NAME"},
+              { click: false, text: "Some text in the this block will contain mach more then we can possibly imagine", zagolovok: "PROJECT NAME"},
+          ],
+        }
+    })
+
+    document.querySelectorAll(".project-itself").forEach( item => {
+            item.addEventListener('click', () => {
+                item.classList.add("project-full-itself");
+                
+            });
+    });
+
+    document.querySelectorAll(".close-btn-project").forEach( item => {
+      item.addEventListener('click', (event) => {
+          event.stopPropagation(); 
+          item.parentElement.classList.remove("project-full-itself");
+          
+      });
+    });
+
+      
 
 
       Vue.component('modal-form', {
@@ -327,16 +477,16 @@ window.addEventListener('load',function () {
     }
 
     
-     new Vue ({
-      el: '.preloader-canvas',
-      data: {
-        width: preloaderWidth,
-        height: preloaderHeight
-      },
-      mounted: function() {
-        createPreloader();
-      }
-    });
+    //  new Vue ({
+    //   el: '.preloader-canvas',
+    //   data: {
+    //     width: preloaderWidth,
+    //     height: preloaderHeight
+    //   },
+    //   mounted: function() {
+    //     createPreloader();
+    //   }
+    // });
 
     
    
@@ -548,7 +698,7 @@ window.addEventListener('load',function () {
       }
       
 
-      
+    
      
 
 });

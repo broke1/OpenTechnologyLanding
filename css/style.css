@@ -8,7 +8,7 @@
   src: url("../fonts/Open_Sans/OpenSans-Regular.ttf");
 }
 
-.present .zaglushka, .achivment .zaglushka, .circles .zaglushka {
+.present .zaglushka, .how-do .zaglushka, .circles .zaglushka {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -18,17 +18,7 @@
   z-index: 0;
 }
 
-.present .behind-block .menu-present .container .contact-present .phone a, .present .behind-block .menu-present .container .contact-present .email a {
-  text-decoration: none;
-  color: black;
-  cursor: pointer;
-}
-
-.present .behind-block .menu-present .container .contact-present .phone a:hover, .present .behind-block .menu-present .container .contact-present .email a:hover {
-  text-decoration: none;
-}
-
-.present, .about-product, .achivment, .form-section, .circles, .preloader {
+.present, .present .menu-block .container, .present .achivment, .form-section, .circles, .preloader {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -51,6 +41,7 @@ body {
 
 .container {
   width: 1140px;
+  z-index: 1;
 }
 
 @media screen and (max-width: 1100px) {
@@ -73,7 +64,7 @@ body {
 
 .present {
   width: 100%;
-  height: 100vh;
+  height: auto;
   position: relative;
   background: url("../img/fon-present.png");
   background-size: cover;
@@ -82,346 +73,31 @@ body {
   background-attachment: fixed;
 }
 
-.present .behind-block {
+.present .menu-block {
   width: 100%;
-  position: relative;
-}
-
-.present .behind-block .menu-present {
-  background-color: white;
-  opacity: 1;
-  height: 300px;
-  width: 100%;
+  height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
+      -ms-flex-flow: row;
+          flex-flow: row;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
-
-@media screen and (max-width: 320px) {
-  .present .behind-block .menu-present {
-    height: auto;
-  }
-}
-
-.present .behind-block .menu-present .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 10px 0;
-}
-
-@media screen and (max-width: 430px) {
-  .present .behind-block .menu-present .container {
-    position: relative;
-  }
-}
-
-.present .behind-block .menu-present .container .contact-present {
-  font-size: 20px;
-  opacity: 0;
-  -webkit-transition: all 0.5s ease 0.3s;
-  transition: all 0.5s ease 0.3s;
-  position: absolute;
-  left: -50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  font-family: "Ubuntu", sans-serif;
-}
-
-.present .behind-block .menu-present .container .contact-present .phone {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-bottom: 10px;
-}
-
-.present .behind-block .menu-present .container .contact-present .phone a {
-  margin-left: 10px;
-}
-
-.present .behind-block .menu-present .container .contact-present .phone .fa {
-  font-size: 20px;
-  color: #4169E0;
-}
-
-.present .behind-block .menu-present .container .contact-present .email {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.present .behind-block .menu-present .container .contact-present .email a {
-  margin-left: 10px;
-}
-
-.present .behind-block .menu-present .container .contact-present .email .fa {
-  font-size: 20px;
-  color: #4169E0;
-}
-
-@media screen and (max-width: 780px) {
-  .present .behind-block .menu-present .container .contact-present {
-    font-size: 16px;
-  }
-}
-
-.present .behind-block .menu-present .container .button-present {
-  padding: 10px 15px;
-  font-size: 20px;
-  background: #4169E0;
-  border-radius: 3px;
-  color: white;
-  font-weight: bold;
-  text-align: center;
-  opacity: 0;
-  -webkit-transition: all 0.5s ease 0.3s;
-  transition: all 0.5s ease 0.3s;
-  position: absolute;
-  left: -50%;
-  cursor: pointer;
-  font-family: "Ubuntu", sans-serif;
-}
-
-.present .behind-block .menu-present .container .text-block {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-@media screen and (max-width: 430px) {
-  .present .behind-block .menu-present .container .text-block {
-    padding: 20px;
-  }
-}
-
-.present .behind-block .menu-present .container .text-block .zagolovok {
-  font-size: 45px;
-  font-weight: bold;
-  text-transform: capitalize;
-  margin: 30px 0;
-  text-align: center;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  font-family: "Ubuntu", sans-serif;
-}
-
-@media screen and (max-width: 780px) {
-  .present .behind-block .menu-present .container .text-block .zagolovok {
-    font-size: 40px;
-  }
-}
-
-@media screen and (max-width: 430px) {
-  .present .behind-block .menu-present .container .text-block .zagolovok {
-    font-size: 25px;
-  }
-}
-
-.present .behind-block .menu-present .container .text-block .about-present {
-  font-size: 25px;
-  opacity: 1;
-  position: relative;
-  top: auto;
-  font-family: "OpenSans", sans-serif;
-}
-
-@media screen and (max-width: 780px) {
-  .present .behind-block .menu-present .container .text-block .about-present {
-    font-size: 20px;
-  }
-}
-
-@media screen and (max-width: 430px) {
-  .present .behind-block .menu-present .container .text-block .about-present {
-    font-size: 18px;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .present .behind-block .menu-present .container .text-block .about-present {
-    font-size: 14px;
-  }
-}
-
-.present .behind-block .fixed-menu-present {
   position: fixed;
   top: 0;
   left: 0;
-  height: auto;
-  z-index: 4;
-  border-bottom: 2px solid #4169E0;
-  opacity: 0.9;
+  z-index: 2;
+  background: transparent;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
-@media screen and (max-width: 430px) {
-  .present .behind-block .fixed-menu-present .container {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column;
-            flex-flow: column;
-    -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
-    padding: 10px 10px 0 10px;
-  }
-}
-
-.present .behind-block .fixed-menu-present .container .contact-present {
-  opacity: 1;
-  position: relative;
-  left: auto;
-}
-
-@media screen and (max-width: 430px) {
-  .present .behind-block .fixed-menu-present .container .contact-present {
-    margin-right: 10px;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .present .behind-block .fixed-menu-present .container .contact-present {
-    font-size: 14px;
-  }
-}
-
-.present .behind-block .fixed-menu-present .container .button-present {
-  opacity: 1;
-  position: relative;
-  left: auto;
-}
-
-@media screen and (max-width: 430px) {
-  .present .behind-block .fixed-menu-present .container .button-present {
-    padding: 8px 12px;
-    font-size: 13px;
-    margin-top: 10px;
-    width: 100vw;
-    text-align: center;
-    border-radius: 0;
-  }
-  .present .behind-block .fixed-menu-present .container .button-present br {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 430px) {
-  .present .behind-block .fixed-menu-present .container .text-block {
-    position: absolute;
-    top: -15px;
-    left: 0px;
-    width: 45vw;
-  }
-}
-
-@media screen and (max-width: 370px) {
-  .present .behind-block .fixed-menu-present .container .text-block {
-    top: -5px;
-  }
-}
-
-.present .behind-block .fixed-menu-present .container .text-block .zagolovok {
-  font-size: 25px;
-  font-weight: bold;
-  text-transform: capitalize;
-  margin: 0;
-  text-align: center;
-}
-
-@media screen and (max-width: 780px) {
-  .present .behind-block .fixed-menu-present .container .text-block .zagolovok {
-    font-size: 20px;
-  }
-}
-
-@media screen and (max-width: 370px) {
-  .present .behind-block .fixed-menu-present .container .text-block .zagolovok {
-    font-size: 18px;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .present .behind-block .fixed-menu-present .container .text-block .zagolovok {
-    font-size: 14px;
-  }
-}
-
-.present .behind-block .fixed-menu-present .container .text-block .about-present {
-  opacity: 0;
-  position: absolute;
-  top: -100px;
-}
-
-.about-product {
-  background: white;
-  width: 100%;
-  height: 600px;
-  position: relative;
-}
-
-.about-product .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.present .menu-block .container {
+  width: 1040px;
+  margin: 50px auto;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-flow: row nowrap;
@@ -429,111 +105,245 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.present .menu-block .container img {
+  width: 100px;
+  height: 100px;
+}
+
+.present .menu-block .container .menu-btn-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-@media screen and (max-width: 430px) {
-  .about-product .container {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column nowrap;
-            flex-flow: column nowrap;
-    -ms-flex-direction: column-reverse;
-        flex-direction: column-reverse;
-    width: 100%;
-  }
+.present .menu-block .container .menu-btn-block .button-present {
+  padding: 15px 40px;
+  font-size: 20px;
+  border: #4169E0 5px solid;
+  -webkit-box-shadow: 0 0 12px 7px rgba(65, 105, 224, 0.8);
+          box-shadow: 0 0 12px 7px rgba(65, 105, 224, 0.8);
+  border-radius: 15px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  font-family: "Ubuntu", sans-serif;
+  position: relative;
+  margin-left: 100px;
 }
 
-.about-product .container .right-block {
-  width: 500px;
-  height: 350px;
-}
-
-@media screen and (max-width: 430px) {
-  .about-product .container .right-block {
-    width: 100%;
-    height: auto;
-  }
-}
-
-.about-product .container .right-block img {
+.present .menu-block .container .menu-btn-block .button-present:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -webkit-box-shadow: inset 0 0 12px 7px rgba(65, 105, 224, 0.8);
+          box-shadow: inset 0 0 12px 7px rgba(65, 105, 224, 0.8);
 }
 
-.about-product .container .left-block {
+.present .menu-block .container .menu-btn-block .menu-itself {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.present .menu-block .container .menu-btn-block .menu-itself .menu-link {
+  display: block;
+  margin-left: 50px;
+  color: white;
+  text-decoration: none;
+  font-family: "Ubuntu", sans-serif;
   font-size: 20px;
+  position: relative;
+}
+
+.present .menu-block .container .menu-btn-block .menu-itself .menu-link:before {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  border-radius: 15px;
+  background: #4169E0;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.present .menu-block .container .menu-btn-block .menu-itself .menu-link-hover:before {
+  width: 100%;
+}
+
+.present .behind-block {
+  width: 100%;
+  position: relative;
+  margin: 40vh 0 200px 0;
+}
+
+.present .behind-block .container {
+  width: 1040px;
+  margin: 0 auto;
+}
+
+.present .behind-block .container .main-text {
+  display: block;
+  color: white;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 70px;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+}
+
+.present .behind-block .container .not-main-text {
+  display: block;
+  color: white;
+  font-family: "OpenSans", sans-serif;
+  font-size: 20px;
+  width: 80%;
+}
+
+.present .about-product {
+  width: 100%;
+  height: auto;
+}
+
+.present .about-product .container {
+  background: white;
+  margin: 0 auto;
+  border-radius: 15px;
+}
+
+@media screen and (max-width: 430px) {
+  .present .about-product .container {
+    width: 100%;
+  }
+}
+
+.present .about-product .container .about-item {
+  padding: 50px  100px;
+}
+
+.present .about-product .container .about-item .left-block {
+  font-size: 18px;
   font-family: "OpenSans", sans-serif;
   text-align: left;
-  width: 500px;
+  width: 50%;
 }
 
 @media screen and (max-width: 780px) {
-  .about-product .container .left-block {
+  .present .about-product .container .about-item .left-block {
     font-size: 18px;
     margin-right: 50px;
   }
 }
 
 @media screen and (max-width: 430px) {
-  .about-product .container .left-block {
+  .present .about-product .container .about-item .left-block {
     width: 100%;
     margin-right: 0;
   }
 }
 
 @media screen and (max-width: 320px) {
-  .about-product .container .left-block {
+  .present .about-product .container .about-item .left-block {
     font-size: 14px;
   }
 }
 
-.about-product .container .left-block .first_row {
-  font-weight: bold;
+.present .about-product .container .about-item .left-block .zagolovok {
   font-family: "Ubuntu", sans-serif;
-  font-size: 24px;
+  font-size: 50px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
-@media screen and (max-width: 780px) {
-  .about-product .container .left-block .first_row {
-    font-size: 22px;
+.present .about-product .container .slick-prev {
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  background: transparent;
+  border: none;
+}
+
+.present .about-product .container .slick-prev:before {
+  content: '\f104';
+  font-family: 'Font Awesome 5 Free';
+  color: white;
+  position: absolute;
+  font-weight: 900;
+  top: -20px;
+  left: -80px;
+  font-size: 70px;
+  opacity: 1;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1600px) {
+  .present .about-product .container .slick-prev:before {
+    left: -40px;
   }
 }
 
-@media screen and (max-width: 430px) {
-  .about-product .container .left-block .first_row {
-    padding: 10px;
+.present .about-product .container .slick-next {
+  position: absolute;
+  top: 50%;
+  right: 0px;
+  background: transparent;
+  border: none;
+}
+
+.present .about-product .container .slick-next:before {
+  content: '\f105';
+  font-family: 'Font Awesome 5 Free';
+  color: white;
+  position: absolute;
+  font-weight: 900;
+  top: -20px;
+  right: -80px;
+  font-size: 70px;
+  opacity: 1;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1600px) {
+  .present .about-product .container .slick-next:before {
+    right: -40px;
   }
 }
 
-@media screen and (max-width: 320px) {
-  .about-product .container .left-block .first_row {
-    font-size: 20px;
-  }
-}
-
-@media screen and (max-width: 430px) {
-  .about-product .container .left-block p {
-    padding: 10px;
-  }
-}
-
-.achivment {
+.present .achivment {
   width: 100%;
   height: auto;
   position: relative;
-  background: url("../img/fon-numbers.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
 }
 
-.achivment .container {
+.present .achivment .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -541,9 +351,8 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
@@ -551,14 +360,13 @@ body {
 }
 
 @media screen and (max-width: 780px) {
-  .achivment .container {
+  .present .achivment .container {
     -ms-flex-pack: distribute;
         justify-content: space-around;
   }
 }
 
-.achivment .container .achivment-item {
-  width: 350px;
+.present .achivment .container .achivment-item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -582,52 +390,41 @@ body {
   opacity: 0;
 }
 
-.achivment .container .achivment-item .achivment-img {
-  width: auto;
+.present .achivment .container .achivment-item .achivment-img {
+  width: 100%;
   height: auto;
 }
 
-.achivment .container .achivment-item .zagolovok-achivment {
+.present .achivment .container .achivment-item .zagolovok-achivment {
   font-weight: bold;
   font-family: "Ubuntu", sans-serif;
   font-size: 24px;
   margin-bottom: 10px;
+  text-align: center;
+  line-height: 30px;
 }
 
-.achivment .container .achivment-item .text-achivment {
-  font-size: 18px;
-  font-family: "OpenSans", sans-serif;
-  text-align: left;
-  line-height: 140%;
-}
-
-.achivment .container .achivment-item:nth-child(2) {
+.present .achivment .container .achivment-item:nth-child(2) {
   -webkit-transition: all 0.5s ease 0.2s;
   transition: all 0.5s ease 0.2s;
 }
 
-.achivment .container .achivment-item:nth-child(3) {
+.present .achivment .container .achivment-item:nth-child(3) {
   -webkit-transition: all 0.5s ease 0.4s;
   transition: all 0.5s ease 0.4s;
 }
 
-.achivment .container .achivment-item:nth-child(5) {
+.present .achivment .container .achivment-item:nth-child(5) {
   -webkit-transition: all 0.5s ease 0.2s;
   transition: all 0.5s ease 0.2s;
 }
 
-.achivment .container .achivment-item:nth-child(6) {
+.present .achivment .container .achivment-item:nth-child(6) {
   -webkit-transition: all 0.5s ease 0.4s;
   transition: all 0.5s ease 0.4s;
 }
 
-@media screen and (max-width: 1100px) {
-  .achivment .container .achivment-item {
-    width: 300px;
-  }
-}
-
-.achivment .container .achivment-item-show {
+.present .achivment .container .achivment-item-show {
   -webkit-transform: scale(1);
           transform: scale(1);
   opacity: 1;
@@ -788,12 +585,11 @@ body {
 }
 
 .form-section .container .left-block .modal-form-itself form .button-send-modal {
-  padding: 10px 15px;
+  padding: 10px 40px;
   font-size: 20px;
   background: #4169E0;
-  border-radius: 3px;
+  border-radius: 15px;
   color: white;
-  font-weight: bold;
   text-align: center;
   -webkit-transition: all 0.5s ease 0.3s;
   transition: all 0.5s ease 0.3s;
@@ -878,6 +674,203 @@ body {
   margin: 0;
   height: 0 !important;
   padding: 0;
+}
+
+.how-do {
+  width: 100%;
+  height: auto;
+  background: url("../img/fon-numbers.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.how-do .our-project {
+  z-index: 1;
+  position: relative;
+}
+
+.how-do .our-project .container {
+  margin: 0 auto;
+}
+
+.how-do .our-project .container .zagolovok-project {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 50px;
+  color: white;
+  text-transform: uppercase;
+  padding: 100px 0px 50px 100px;
+}
+
+.how-do .our-project .container .obertka-block {
+  padding: 50px;
+}
+
+.how-do .our-project .container .obertka-block .project-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  width: 1040px;
+  height: 570px;
+  overflow: hidden;
+}
+
+.how-do .our-project .container .obertka-block .project-block .project-itself {
+  width: 400px;
+  height: 200px;
+  border-radius: 15px;
+  background: white;
+  padding: 30px;
+  cursor: pointer;
+  position: absolute;
+  z-index: 0;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.how-do .our-project .container .obertka-block .project-block .project-itself:nth-child(1) {
+  top: 0;
+  left: 0;
+  opacity: 0;
+  -webkit-transform: translateX(-200px);
+          transform: translateX(-200px);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.how-do .our-project .container .obertka-block .project-block .project-itself:nth-child(2) {
+  top: 0;
+  right: 0;
+  opacity: 0;
+  -webkit-transform: translateY(-200px);
+          transform: translateY(-200px);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.how-do .our-project .container .obertka-block .project-block .project-itself:nth-child(3) {
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  -webkit-transform: translateY(200px);
+          transform: translateY(200px);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.how-do .our-project .container .obertka-block .project-block .project-itself:nth-child(4) {
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  -webkit-transform: translateX(200px);
+          transform: translateX(200px);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.how-do .our-project .container .obertka-block .project-block .project-itself .zagolovok {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 40px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.how-do .our-project .container .obertka-block .project-block .project-itself .text-project {
+  font-family: "OpenSans", sans-serif;
+  font-size: 20px;
+  margin-bottom: 50px;
+}
+
+.how-do .our-project .container .obertka-block .project-block .project-itself .close-btn-project {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  border: 3px solid #4169E0;
+  padding: 5px 0 3px 9px;
+  cursor: pointer;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease 0.5s;
+  transition: all 0.5s ease 0.5s;
+}
+
+.how-do .our-project .container .obertka-block .project-block .project-full-itself {
+  width: 980px;
+  height: 510px;
+  z-index: 1;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.how-do .our-project .container .obertka-block .project-block .project-full-itself .close-btn-project {
+  opacity: 1;
+}
+
+.how-do .our-project .container .obertka-block .project-block .project-full-show:nth-child(1) {
+  opacity: 1;
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.how-do .our-project .container .obertka-block .project-block .project-full-show:nth-child(2) {
+  top: 0;
+  right: 0;
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.how-do .our-project .container .obertka-block .project-block .project-full-show:nth-child(3) {
+  bottom: 0;
+  left: 0;
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.how-do .our-project .container .obertka-block .project-block .project-full-show:nth-child(4) {
+  bottom: 0;
+  right: 0;
+  opacity: 1;
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .circles {
