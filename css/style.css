@@ -517,8 +517,8 @@ body {
 }
 
 .form-section .container .right-block img {
-  -webkit-transform: translateX(-200px);
-          transform: translateX(-200px);
+  -webkit-transform: translateX(-250px);
+          transform: translateX(-250px);
 }
 
 @media screen and (max-width: 1600px) {
