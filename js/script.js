@@ -6,7 +6,7 @@ window.addEventListener('load',function () {
     new Vue ({
       el: ".menu-block",
       data: {
-          logo: 'img/logo.png',
+          logo: 'img/logo.svg',
           menus: [
             {
               label: 'О продукте',
