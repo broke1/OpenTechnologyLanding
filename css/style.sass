@@ -12,7 +12,9 @@ $white : rgb(255,255,255)
 
 $transition: all 0.5s ease
 
-$blue: #4169E0
+$blue: #36A9E1 
+
+$text-on-white: #757575
     
 %zaglushka
     position: absolute
@@ -61,7 +63,7 @@ body
     height: auto
     position: relative
     @extend %flex-section
-    background: url("../img/fon-present.png")
+    background: url("../img/back.png")
     background-size: cover
     background-position: center
     background-repeat: no-repeat
@@ -95,8 +97,8 @@ body
             transition: $transition
 
             img
-                width: 100px
-                height: 100px
+                width: 100%
+                height: auto
 
 
             .menu-btn-block
@@ -106,26 +108,27 @@ body
                 align-items: center
 
                 .button-present
-                    padding: 15px 40px
-                    font-size: 20px
-                    border: $blue 5px solid
-                    box-shadow: 0 0 12px 7px rgba(65, 105, 224, 0.8)
-                    border-radius: 15px
+                    padding: 10px 35px
+                    font-size: 16px
+                    border: $blue 3px solid
+                    border-radius: 13px
                     color: $white
                     text-align: center
                     cursor: pointer
                     font-family: "Ubuntu", sans-serif
                     position: relative
                     margin-left: 100px
+                    font-weight: bold
+                    box-shadow: 0 0 10px 5px rgba(54, 169, 225, 0.8)
 
                     &:after
                         content: ''
                         position: absolute
-                        top: 0
-                        left: 0
                         width: 100%
                         height: 100%
-                        box-shadow: inset 0 0 12px 7px rgba(65, 105, 224, 0.8)
+                        top: 0
+                        left: 0
+                        box-shadow: inset 0 0 10px 5px rgba(54, 169, 225, 0.8)
 
                 .menu-itself
                     display: flex
@@ -148,8 +151,9 @@ body
                             bottom: -10px
                             left: 0
                             width: 0%
-                            height: 3px
-                            border-radius: 15px
+                            height: 2px
+                            border-radius: 13px
+                            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
                             background: $blue
                             transition: $transition
                     
@@ -161,7 +165,7 @@ body
     .behind-block
         width: 100%
         position: relative
-        margin: 40vh 0 200px 0
+        margin: 400px 0 250px 0
 
         .container
             width: 1040px
@@ -173,7 +177,7 @@ body
                 font-family: "Ubuntu", sans-serif
                 font-size: 70px
                 text-transform: uppercase
-                margin-bottom: 50px
+                margin-bottom: 20px
 
             .not-main-text
                 display: block
@@ -352,7 +356,7 @@ body
             //             width: 100vw
             //             text-align: center
             //             border-radius: 0
-
+ 
             //             br
             //                 display: none
 
@@ -406,7 +410,9 @@ body
                 width: 100%
 
             .about-item
-                padding: 50px  100px
+                padding: 70px  120px
+                min-height: 325px
+                position: relative
 
 
                 // .right-block
@@ -423,10 +429,11 @@ body
                 //         object-fit: cover
                     
                 .left-block
-                    font-size: 18px
+                    font-size: 16px
+                    line-height: 20px
                     font-family: "OpenSans", sans-serif
                     text-align: left
-                    width: 50%
+                    color: $text-on-white
                     
 
                     @media screen and (max-width: 780px)
@@ -457,10 +464,21 @@ body
 
                     .zagolovok
                         font-family: "Ubuntu", sans-serif
-                        font-size: 50px
+                        font-size: 48px
+                        line-height: 62px
                         margin-bottom: 20px
-                        font-weight: bold
                         text-transform: uppercase
+
+                    .about-text
+                        width: 50%
+
+                .about-img
+                    position: absolute
+                    right: 0
+                    bottom: 0
+
+
+
 
             .slick-prev
                 position: absolute
@@ -543,10 +561,12 @@ body
                 transition: $transition
                 transform: scale(0.7)
                 opacity: 0
+                min-width: 190px
 
                 .achivment-img
                     width: 100%
                     height: auto
+                    text-align: center
 
                 .zagolovok-achivment
                     font-weight: bold
@@ -582,20 +602,31 @@ body
                 opacity: 1
 
 .form-section
-    padding: 40px 0
     background: $white
     @extend %flex-section
     transition: $transition
-    height: 400px
+    height: 500px
+    position: relative
 
     @media screen and (max-width: 430px)
         height: auto
 
+    .corner-img
+            position: absolute
+            bottom: 0
+            left: 0
+            height: 100%
+            width: auto
+
+            img
+                width: 100%
+                height: 100%
+                object-fit: cover
 
     .container
         display: flex;
         flex-flow: row nowrap
-        justify-content: space-between
+        justify-content: flex-start
         align-items: center
         transition: $transition
 
@@ -606,46 +637,70 @@ body
        
 
         .right-block
+            width: 50%
+            @extend %flex-section
 
             @media screen and (max-width: 430px)
                 padding: 0 20px
 
-            .zagolovok
-                font-weight: bold
-                font-family: "Ubuntu", sans-serif
-                font-size: 24px
-                margin-bottom: 10px
-                text-align: center
+            img
+                transform: translateX(-200px)
 
-                @media screen and (max-width: 430px)
-                    font-size: 20px
+                @media screen and (max-width: 1600px)
+                    transform: translateX(0px)
+
             
-            .text
-                font-size: 18px
-                font-family: "OpenSans", sans-serif
-                text-align: left
-                line-height: 140%
 
-                @media screen and (max-width: 430px)
-                    font-size: 16px
+            
+
+            // .zagolovok
+            //     font-weight: bold
+            //     font-family: "Ubuntu", sans-serif
+            //     font-size: 24px
+            //     margin-bottom: 10px
+            //     text-align: center
+
+            //     @media screen and (max-width: 430px)
+            //         font-size: 20px
+            
+            // .text
+            //     font-size: 18px
+            //     font-family: "OpenSans", sans-serif
+            //     text-align: left
+            //     line-height: 140%
+
+            //     @media screen and (max-width: 430px)
+            //         font-size: 16px
 
         .left-block
-             width: 600px
+            width: 50%
 
-             @media screen and (max-width: 430px)
+            @media screen and (max-width: 430px)
                 width: 100%
 
-             .modal-form-itself
+    
+            .zagolovok
+                font-size: 45px
+                line-height: 53px
+                font-family: "Ubuntu", sans-serif
+                color: $text-on-white
+                text-transform: uppercase
+                margin-top: 50px
+                margin-bottom: 10px
+                transition: $transition
+
+
+
+            .modal-form-itself
                 width: 550px
                 height: auto
                 min-height: 60px
                 border-radius: 5px
                 background: #ffffff
-                margin: 0 20px
                 position: relative
                 display: flex
                 flex-flow: column nowrap
-                justify-content: center
+                justify-content: flex-start
 
                 @media screen and (max-width: 430px)
                     width: 100%
@@ -667,12 +722,11 @@ body
                     display: flex
                     flex-flow: column nowrap
                     justify-content: flex-start
-                    align-items: center
+                    align-items: flex-start
                     position: relative
                     transition: $transition
                     height: auto
                     position: relative
-                    padding: 10px
                     overflow: hidden
 
                     // .zagolovok-form
@@ -687,7 +741,8 @@ body
                         margin: 20px 0
 
                     input
-                        font-size: 18px
+                        font-size: 20px
+                        line-height: 21px
                         font-family: "OpenSans", sans-serif
                         text-align: left
                         color: #333333
@@ -695,7 +750,7 @@ body
                         width: 300px
                         border-radius: 0px
                         border: none
-                        border-bottom: 2px solid $blue
+                        border-bottom: 2px solid #ACA6A6
                         padding-bottom: 15px
 
                     // textarea
@@ -720,16 +775,17 @@ body
 
 
                     .button-send-modal
-                        padding: 10px 40px
+                        padding: 15px 40px
                         font-size: 20px
+                        line-height: 23px
                         background: $blue
-                        border-radius: 15px
+                        border-radius: 13px
                         color: $white
                         text-align: center
                         transition: $transition 0.3s
                         cursor: pointer
                         font-family: "Ubuntu", sans-serif
-                        margin: 0
+                        margin:  0 0 40px 180px
                     
 
                     // .modal-file
@@ -793,7 +849,7 @@ body
                             font-family: "OpenSans", sans-serif
                             font-size: 14px
                             line-height: 140%
-                            color: #333333
+                            color: $text-on-white
                             padding-left: 30px
                             position: relative
 
@@ -804,20 +860,21 @@ body
                                 left: 0
                                 width: 10px;
                                 height: 10px;
-                                border: 2px solid #333333
+                                border: 2px solid #ACA6A6
                                 transition: $transition
+                                cursor: pointer
 
                     .description-accept
                         font-family: "OpenSans", sans-serif
                         font-size: 15px
                         line-height: 180%
                         margin: 10px 0
-                        text-align: center
+                        text-align: left
                         transition: $transition
                         opacity: 1
                         visibility: vissible
                         width: 100%
-
+                        color: $text-on-white
 
                     .hide 
                         opacity: 0
@@ -827,10 +884,10 @@ body
                 .description
                         font-family: "OpenSans", sans-serif
                         font-size: 25px
-                        text-align: center
+                        text-align: left
                         line-height: 180%
-                        color: #333333
-                        transition: $transition
+                        color: #ACA6A6
+                        transition: $text-on-white
                         margin: 50px auto
 
                 .hide 
@@ -843,7 +900,7 @@ body
 .how-do
     width: 100%
     height: auto
-    background: url("../img/fon-numbers.png")
+    background: url("../img/back.png")
     background-size: cover
     background-position: center
     background-repeat: no-repeat
@@ -862,10 +919,10 @@ body
 
             .zagolovok-project
                 font-family: "Ubuntu", sans-serif
-                font-size: 50px
+                font-size: 70px
                 color: $white
                 text-transform: uppercase
-                padding: 100px 0px 50px 100px
+                padding: 120px 0px 0 100px
 
             .obertka-block
                 padding: 50px
@@ -884,9 +941,10 @@ body
                     .project-itself
                         width: 400px
                         height: 200px
-                        border-radius: 15px
+                        border-radius: 20px
                         background: $white
                         padding: 30px
+                        color: $text-on-white
                         cursor: pointer
                         position: absolute
                         z-index: 0
@@ -894,7 +952,7 @@ body
                         display: flex
                         flex-flow: column nowrap
                         justify-content: center
-                        align-items: center
+                        align-items: flex-start
 
 
                         &:nth-child(1)
@@ -929,20 +987,19 @@ body
 
                         .zagolovok
                             font-family: "Ubuntu", sans-serif
-                            font-size: 40px
+                            font-size: 30px
                             text-transform: uppercase
-                            margin-bottom: 30px
-                            font-weight: bold
+                            margin-bottom: 10px
 
                         .text-project
                             font-family: "OpenSans", sans-serif
-                            font-size: 20px
+                            font-size: 16px
                             margin-bottom: 50px
 
                         .close-btn-project
                             position: absolute
-                            top: 5px
-                            right: 5px
+                            top: 15px
+                            right: 15px
                             width: 20px
                             height: 20px;
                             border-radius: 50px
@@ -993,185 +1050,222 @@ body
                             transition: $transition
                         
 
-
-
-               
-
-                    
-
-            
-
-
   
-.circles
-    width: 100%
-    position: relative
-    @extend %flex-section
-    background: url("../img/fon-present.png")
-    background-size: cover
-    background-position: center
-    background-repeat: no-repeat
-    background-attachment: fixed
+// .circles
+//     width: 100%
+//     position: relative
+//     @extend %flex-section
+//     background: url("../img/fon-present.png")
+//     background-size: cover
+//     background-position: center
+//     background-repeat: no-repeat
+//     background-attachment: fixed
 
-    .zaglushka
-        @extend %zaglushka
+//     .zaglushka
+//         @extend %zaglushka
 
-    .container
-        z-index: 1
-        display: flex
-        flex-flow: row nowrap
-        justify-content: space-between
-        align-items: center
-        padding: 150px 0
+//     .container
+//         z-index: 1
+//         display: flex
+//         flex-flow: row nowrap
+//         justify-content: space-between
+//         align-items: center
+//         padding: 150px 0
 
-        @media screen and (max-width: 780px)
-            flex-flow: row wrap
-            justify-content: center
+//         @media screen and (max-width: 780px)
+//             flex-flow: row wrap
+//             justify-content: center
 
-        .circle-block
-            position: relative
-            color: $white
-            opacity: 0
-            transition: $transition
+//         .circle-block
+//             position: relative
+//             color: $white
+//             opacity: 0
+//             transition: $transition
 
-            @media screen and (max-width: 780px)
-                margin: 50px 20px 0 20px
+//             @media screen and (max-width: 780px)
+//                 margin: 50px 20px 0 20px
 
-            .circle
-                transform: rotate(-90deg)  
+//             .circle
+//                 transform: rotate(-90deg)  
 
-            .circle-numbers
-                font-weight: bold
-                font-family: "Ubuntu", sans-serif
-                font-size: 30px
-                text-align: center
-                position: absolute
-                top: 20%
-                left: 50%
-                transform: translateX(-50%)
-                transition: $transition
+//             .circle-numbers
+//                 font-weight: bold
+//                 font-family: "Ubuntu", sans-serif
+//                 font-size: 30px
+//                 text-align: center
+//                 position: absolute
+//                 top: 20%
+//                 left: 50%
+//                 transform: translateX(-50%)
+//                 transition: $transition
 
-            .about-numbers
-                font-family: "OpenSans", sans-serif
-                font-size: 15px
-                text-align: center
-                line-height: 180%
-                position: absolute
-                top: 45%
-                left: 50%
-                transform: translateX(-50%)
-                white-space: nowrap
+//             .about-numbers
+//                 font-family: "OpenSans", sans-serif
+//                 font-size: 15px
+//                 text-align: center
+//                 line-height: 180%
+//                 position: absolute
+//                 top: 45%
+//                 left: 50%
+//                 transform: translateX(-50%)
+//                 white-space: nowrap
 
-        .circle-block-show
-            opacity: 1
+//         .circle-block-show
+//             opacity: 1
                 
-.offer
-    background: $white
+// .offer
+//     background: $white
    
-    .container
-        margin: 0 auto
-        position: relative
-        height: 800px
-        perspective: 3500px
-        transform-style: flat
+//     .container
+//         margin: 0 auto
+//         position: relative
+//         height: 800px
+//         perspective: 3500px
+//         transform-style: flat
 
-        @media screen and (max-width: 430px)
-            height: auto 
-            perspective: none
-            dipslay: flex
-            flex-flow: column nowrap
-            justify-content: flex-start
-            align-items: center
-            padding-top: 50px
+//         @media screen and (max-width: 430px)
+//             height: auto 
+//             perspective: none
+//             dipslay: flex
+//             flex-flow: column nowrap
+//             justify-content: flex-start
+//             align-items: center
+//             padding-top: 50px
 
 
-        .offer-block
-            width: 700px
-            height: 550px
-            border-radius: 5px
-            border: 2px solid $blue
-            position: absolute
-            top: 0
-            left: 0
-            background: $white
-            transition: $transition
-            z-index: 2
-            opacity: 0.6
-            transform: rotateY(30deg)
-            box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3)
+//         .offer-block
+//             width: 700px
+//             height: 550px
+//             border-radius: 5px
+//             border: 2px solid $blue
+//             position: absolute
+//             top: 0
+//             left: 0
+//             background: $white
+//             transition: $transition
+//             z-index: 2
+//             opacity: 0.6
+//             transform: rotateY(30deg)
+//             box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3)
 
-            @media screen and (max-width: 780px)
-                width: 600px
-                height: 450px
+//             @media screen and (max-width: 780px)
+//                 width: 600px
+//                 height: 450px
 
-            @media screen and (max-width: 430px)
-                transform: rotateY(0deg)
-                position: relative
-                width: 300px
-                height: auto
-                opacity: 1
-                top: auto !important
-                left: 50% !important
-                transform: translateX(-50%) !important
-                margin-bottom: 50px
+//             @media screen and (max-width: 430px)
+//                 transform: rotateY(0deg)
+//                 position: relative
+//                 width: 300px
+//                 height: auto
+//                 opacity: 1
+//                 top: auto !important
+//                 left: 50% !important
+//                 transform: translateX(-50%) !important
+//                 margin-bottom: 50px
             
 
-            .zagolovok-offer
-                padding: 30px
-                border-bottom: 2px solid $blue
-                font-weight: bold
-                font-family: "Ubuntu", sans-serif
-                font-size: 25px
+//             .zagolovok-offer
+//                 padding: 30px
+//                 border-bottom: 2px solid $blue
+//                 font-weight: bold
+//                 font-family: "Ubuntu", sans-serif
+//                 font-size: 25px
 
-                @media screen and (max-width: 780px)
-                    padding: 15px 30px 
-                    margin: 0
-                    font-size: 20px
+//                 @media screen and (max-width: 780px)
+//                     padding: 15px 30px 
+//                     margin: 0
+//                     font-size: 20px
                 
-                @media screen and (max-width: 430px)
-                    font-size: 18px
+//                 @media screen and (max-width: 430px)
+//                     font-size: 18px
                 
-            .text-offer
-                padding: 30px
-                font-family: "OpenSans", sans-serif
-                font-size: 18px
-                line-height: 180%
-                height: 330px
-                overflow-y: scroll
+//             .text-offer
+//                 padding: 30px
+//                 font-family: "OpenSans", sans-serif
+//                 font-size: 18px
+//                 line-height: 180%
+//                 height: 330px
+//                 overflow-y: scroll
 
-                @media screen and (max-width: 780px)
-                    height: 300px
-                    margin: 0
-                    font-size: 16px
+//                 @media screen and (max-width: 780px)
+//                     height: 300px
+//                     margin: 0
+//                     font-size: 16px
 
-                @media screen and (max-width: 430px)
-                    height: auto
-                    font-size: 14px
+//                 @media screen and (max-width: 430px)
+//                     height: auto
+//                     font-size: 14px
 
-        .offer-block-hover
-            z-index: 3
-            opacity: 1
-            transform: translateX(-70px) rotateY(0deg)
+//         .offer-block-hover
+//             z-index: 3
+//             opacity: 1
+//             transform: translateX(-70px) rotateY(0deg)
 
-            @media screen and (max-width: 430px)
-               transform: translateX(0px) rotateY(0deg) 
+//             @media screen and (max-width: 430px)
+//                transform: translateX(0px) rotateY(0deg) 
 
 
         
 
 .footer
-    background: $white
-    border-top:  2px solid $blue
+    width: 100%
+    height: auto
+    background: url("../img/back.png")
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+    background-attachment: fixed
+    position: relative
+
+    .zaglushka
+        @extend %zaglushka
 
     .container
         margin: 0 auto
+        z-index: 1
+        display: flex
+        flex-flow: row nowrap
+        justify-content: space-between
+        padding: 120px 0 70px 0
 
-        p
-            font-family: "OpenSans", sans-serif
-            font-size: 12px
-            text-align: center
-            line-height: 140%
-            padding: 5px 0
+        .left-side-footer
+            margin-left: 50px
+            z-index: 1
+
+            .logo-footer
+                margin-bottom: 30px
+                display: flex
+                flex-flow: row nowrap
+                justify-content: flex-start
+                align-items: center
+
+                // img
+                //     width: 100%
+                //     height: auto
+
+            .email
+                font-size: 20px
+                line-height: 23px
+                color: $white
+                font-family: "OpenSans", sans-serif
+                margin-left: 65px
+
+            .text-left
+               font-family: "OpenSans", sans-serif
+               font-size: 18px
+               color: $white 
+               line-height: 30px
+
+        // .right-side-footer
+        //     margin-right: 100px
+        //     margin-top: 20px
+        //     font-family: "OpenSans", sans-serif
+        //     font-size: 25px
+        //     color: $white 
+        //     line-height: 30px
+        //     z-index: 1
+
+
 
 
 
@@ -1249,10 +1343,12 @@ body
                 .zagolovok-form
                     font-weight: bold
                     font-family: "Ubuntu", sans-serif
-                    font-size: 20px
+                    font-size: 30px
                     margin-bottom: 20px
                     text-align: center
                     background-color: #ffffff
+                    color: $text-on-white
+                    text-transform: uppercase
 
                     @media screen and (max-width: 320px)
                         font-size: 18px
@@ -1269,7 +1365,7 @@ body
                     width: 300px
                     border-radius: 0px
                     border: none
-                    border-bottom: 2px solid $blue
+                    border-bottom: 2px solid #ACA6A6
                     padding-bottom: 15px
 
                     @media screen and (max-width: 320px)
@@ -1297,10 +1393,10 @@ body
 
 
                 .button-send-modal
-                    padding: 10px 15px
+                    padding: 15px 40px
                     font-size: 20px
                     background: $blue
-                    border-radius: 3px
+                    border-radius: 13px
                     color: $white
                     font-weight: bold
                     text-align: center
@@ -1382,7 +1478,7 @@ body
                             left: 0
                             width: 10px;
                             height: 10px;
-                            border: 2px solid #333333
+                            border: 2px solid $text-on-white
                             transition: $transition
 
                 .description-accept
@@ -1395,6 +1491,7 @@ body
                     opacity: 1
                     visibility: vissible
                     width: 100%
+                    color: $text-on-white
 
 
                 .hide 
@@ -1407,7 +1504,7 @@ body
                 font-size: 25px
                 text-align: center
                 line-height: 180%
-                color: #333333
+                color: $text-on-white
                 transition: $transition
                 margin: 50px auto
 

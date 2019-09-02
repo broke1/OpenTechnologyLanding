@@ -6,19 +6,19 @@ window.addEventListener('load',function () {
     new Vue ({
       el: ".menu-block",
       data: {
-          logo: 'img/figure.png',
+          logo: 'img/logo.png',
           menus: [
             {
-              label: 'About us',
-              url: '.about-product'
+              label: 'О продукте',
+              url: '.behind-block'
             },
             {
-              label: 'Contact us',
-              url: '.form-section'
+              label: 'Кейсы',
+              url: '.how-do'
             },
             {
-              label: 'Just us',
-              url: '.offer'
+              label: 'Контакты',
+              url: '.footer'
             }
           ]
       }
@@ -66,8 +66,8 @@ window.addEventListener('load',function () {
         el: ".behind-block",
         data: {
             zagolovok: "Платформа Atlas",
-            about: `Платформа окртытых технологий позиционирует себя, как удобное решение для людого аналитика. Преждоставляет широкий
-            и удобный интерфейс для выоплнения разнообразных запросов`,
+            about: `комплексное технологическое решение на основе платформенного подхода, ориентированное на предупреждение отказов,
+             выявления негативных, нежелательных сценариев в работе сложных комплексов оборудования и сложных систем `,
         }
     })
 
@@ -77,49 +77,45 @@ window.addEventListener('load',function () {
       data: {
          abouts: [
            {
-            img: "img/img-about.png",
-            zagolovok: "Your Rules Our Sml",
+            img: "img/img-about-1.png",
+            zagolovok: "ПРОДВИНУТАЯ <br> ПРЕДИКТИВНАЯ АНАЛИТИКА",
             text: `
-                Предлагаемая базовая платформа вне комплексного подхода соответствует современному уровню
-                  развития систем предиктивной аналитики, которые существуют на глобальном рынке. <br><br>
-                  При этом дополнительным ее важным достоинством, способным обеспечить интерес пользователя,
-                  является то, что она свободно распространяется с открытым исходным кодом (Open Source).`
+            Предлагаемая базовая платформа вне комплексного подхода соответствует современному уровню развития систем предиктивной аналитики, которые существуют на глобальном рынке.
+            <br><br>
+            При этом дополнительным ее важным достоинством, способным обеспечить интерес пользователя, является то, что она свободно распространяется с открытым исходным кодом (Open Source). 
+                `
             },
             {
-              img: "img/img-about.png",
-              zagolovok: "Your Rules Our Sml",
+              img: "img/img-about-2.png",
+              zagolovok: "ИНТЕРПРЕТИРУЕМОСТЬ <br> МОДЕЛЕЙ ",
               text: `
-              Частью предлагаемой платформы являются язык SML и методика в базовой версии ее изложения. `
+              Частью предлагаемой платформы являются язык SML и методика в базовой версии ее изложения. Язык SML, являющийся частью предлагаемого комплексного решения, позволяет осуществлять интерпретируемость моделей.
+              <br><br>
+              В настоящий момент такая возможность не предоставляется никакими конкурентными платформе решениями. `
             },
             {
-              img: "img/img-about.png",
-              zagolovok: "Your Rules Our Sml",
+              img: "img/img-about-3.png",
+              zagolovok: "ЭФФЕКТИВНАЯ И <br> КОЛЛЕКТИВНАЯ БЕЗОПАСНОСТЬ",
               text: `
-              Язык SML, являющийся частью предлагаемого комплексного решения, позволяет осуществлять интерпретируемость моделей.
-               В настоящий момент такая возможность не предоставляется никакими конкурентными платформе решениями.`
+              Объекты на плоскости зонтик над ними или щит защищающий от негатива или опасности. 
+              <br><br>
+              ATLAS – это первое решение на глобальном рынке, которое вводит понятие миссии
+              коллективной безопасности участников рынков в самых разнообразных сегментах. Создает эффективный инструмент для обеспечения данной миссии.
+              `
             },
             {
-              img: "img/img-about.png",
-              zagolovok: "Your Rules Our Sml",
+              img: "img/img-about-1.png",
+              zagolovok: "НЕ БЫТЬ <br> ВТОРЫМ! ",
               text: `
-              ATLAS – это первое решение на глобальном рынке, которое вводит понятие миссии коллективной безопасности участников рынков в самых
-               разнообразных сегментах.
-               Создает эффективный инструмент для обеспечения данной миссии.`
+              В методике и SML реализован ряд сценариев, позволяющих описывать режимы нормального функционирования объектов, 
+              что позволяет выявлять и прогнозировать отказы даже в том случае, когда таких отказов не наблюдалось в истории.`
             },
             {
-              img: "img/img-about.png",
-              zagolovok: "Your Rules Our Sml",
+              img: "img/img-about-2.png",
+              zagolovok: "УМНОЕ <br> ПРОФИЛИРОВАНИЕ",
               text: `
-              Платформа и модели на основе SML, реализуя подход коллективной безопасности,
-               гарантируют недопущение повторного возникновения инцидента, зарегистрированного на других объектах того же типа,
-                тем самым воплощая принцип “Не быть вторым!”. `
-            },
-            {
-              img: "img/img-about.png",
-              zagolovok: "Your Rules Our Sml",
-              text: `
-              В методике и SML реализован ряд сценариев, позволяющих описывать режимы нормального функционирования объектов,
-               что позволяет выявлять и прогнозировать отказы даже в том случае, когда таких отказов не наблюдалось в истории.`
+              В методике и SML реализован ряд сценариев, позволяющих описывать режимы нормального функционирования объектов, 
+              что позволяет выявлять и прогнозировать отказы даже в том случае, когда таких отказов не наблюдалось в истории.”. `
             },
 
          ]
@@ -164,7 +160,7 @@ window.addEventListener('load',function () {
          let current_scroll = window.pageYOffset;
 
         
-         current_scroll == 0 ? menu_block.style.background = "transparent" : menu_block.style.background = "rgba(65, 105, 224, 0.6)"
+         current_scroll == 0 ? menu_block.style.background = "transparent" : menu_block.style.background = "rgba(54, 169, 225, 0.5)"
          current_scroll == 0 ? menu_block.querySelector(".container").style = "margin: 50px auto" : menu_block.querySelector(".container").style = "margin: 10px auto"
  
           if (current_scroll > last_scroll) {
@@ -266,9 +262,9 @@ window.addEventListener('load',function () {
           el: '.achivment',
           data: {
             achivments: [
-                { img: "img/figure.png", zagolovok: "Коллективная <br> безопасность"},
-                { img: "img/figure.png", zagolovok: "Искусственный <br> интеллект"},
-                { img: "img/figure.png", zagolovok: "Опыт <br> экспертов"},
+                { img: "img/achivment.png", zagolovok: "Коллективная <br> безопасность"},
+                { img: "img/achivment.png", zagolovok: "Искусственный <br> интеллект"},
+                { img: "img/achivment.png", zagolovok: "Опыт <br> экспертов"},
             ],
           }
       })
@@ -277,10 +273,10 @@ window.addEventListener('load',function () {
         el: '.project-block',
         data: {
           projects: [
-              { click: false, text: "Some text in the this block will contain mach more then we can possibly imagine", zagolovok: "PROJECT NAME"},
-              { click: false, text: "Some text in the this block will contain mach more then we can possibly imagine", zagolovok: "PROJECT NAME"},
-              { click: false, text: "Some text in the this block will contain mach more then we can possibly imagine", zagolovok: "PROJECT NAME"},
-              { click: false, text: "Some text in the this block will contain mach more then we can possibly imagine", zagolovok: "PROJECT NAME"},
+              { click: false, text: "Мы проектировали свой код так, чтобы любому человеку было интуитивно понятно как вводить команды", zagolovok: "ПРОГНОЗИРОВАНИЕ <br> ОТКАЗОВ В ИТ"},
+              { click: false, text: "Мы проектировали свой код так, чтобы любому человеку было интуитивно понятно как вводить команды", zagolovok: "ПРОГНОЗИРОВАНИЕ <br> ОТКАЗОВ В Oil&Gas"},
+              { click: false, text: "Мы проектировали свой код так, чтобы любому человеку было интуитивно понятно как вводить команды", zagolovok: "ПРОГНОЗИРОВАНИЕ <br> ОТКАЗОВ В ЭНЕРГЕТИКЕ"},
+              { click: false, text: "Мы проектировали свой код так, чтобы любому человеку было интуитивно понятно как вводить команды", zagolovok: "ПРОГНОЗИРОВАНИЕ <br> ОТКАЗОВ В ТРАНСПОРТЕ"},
           ],
         }
     })
@@ -311,12 +307,12 @@ window.addEventListener('load',function () {
                   <form action="/send/send.php" :class="settings.class_name" name="modal">
                       <div class="close-btn" v-if="settings.close_seen">X</div>
                       <p class="zagolovok-form" v-if="settings.zagolovok_seen">{{settings.zagolovok}}</p>
-                      <input type="text" name="name" placeholder="Ваше имя" class="form-item">
-                      <input type="text" name="phone" class="phone-form-modal form-item"  placeholder="+7 (___) ___-__-__ " >
+                      <input type="text" name="name" placeholder="Имя" class="form-item">
+                      <input type="text" name="phone" class="phone-form-modal form-item"  placeholder="Телефон" >
                       
                       <div class="accept-block">
                         <input :id="settings.id" type="checkbox" name="accept" value="male">
-                        <label :for="settings.id">Я разрешаю обработку моих персональных данных</label>
+                        <label :for="settings.id">Согласие на обработку  персональных данных</label>
                       </div> 
                       <div class="description-accept hide">Согласитесь с обработкой данных</div>
                       <div  class="button-send-modal  form-item" >Заказать</div>
@@ -357,116 +353,118 @@ window.addEventListener('load',function () {
     })
     
 
+    $(".phone-form-modal").mask("+7 (999) 999-99-99");
 
 
-    new Vue({
-        el: '.circles',
-        data: {
-          circles: [
-              { number: "25 000" },
-              { number:  "25 000" },
-              { number:  "25 000" },
-          ]
-        }
-    })
+
+    // new Vue({
+    //     el: '.circles',
+    //     data: {
+    //       circles: [
+    //           { number: "25 000" },
+    //           { number:  "25 000" },
+    //           { number:  "25 000" },
+    //       ]
+    //     }
+    // })
 
    
-    let clearHover =  function () {
-      document.querySelectorAll('.offer-block').forEach(item=>{
-        item.classList.remove('offer-block-hover');
-     });
-    }
+    // let clearHover =  function () {
+    //   document.querySelectorAll('.offer-block').forEach(item=>{
+    //     item.classList.remove('offer-block-hover');
+    //  });
+    // }
 
-    let hoverFunc = function() {
-      clearHover();
-     this.$el.classList.add('offer-block-hover');
+    // let hoverFunc = function() {
+    //   clearHover();
+    //  this.$el.classList.add('offer-block-hover');
      
-    }
+    // }
 
 
 
-    Vue.component('offer-items', {
-      props: ['offers'],
-      template: `
-          <div class="offer-block" @mouseover="hover" @mouseout="unhover" @click="hover">   
-              <p class="zagolovok-offer">{{offers.zagolovok}}</p>
-              <p class="text-offer">{{offers.text}}</p>
-          </div>
-      `,
-      methods: {
-        hover: hoverFunc,
-        unhover: clearHover
+    // Vue.component('offer-items', {
+    //   props: ['offers'],
+    //   template: `
+    //       <div class="offer-block" @mouseover="hover" @mouseout="unhover" @click="hover">   
+    //           <p class="zagolovok-offer">{{offers.zagolovok}}</p>
+    //           <p class="text-offer">{{offers.text}}</p>
+    //       </div>
+    //   `,
+    //   methods: {
+    //     hover: hoverFunc,
+    //     unhover: clearHover
         
         
-      },
-    })
+    //   },
+    // })
 
 
-      new Vue({
-        el: '.offer',
-        data: {
-          offers: [
-              {  zagolovok: "Описание процесса номер 1",text: `Мы проектировали  свой код
-              так, чтобы любому человеку
-              было интуитивно понятно
-              как вводить команды Мы проектировали  свой код
-              так, чтобы любому человеку
-              было интуитивно понятно
-              как вводить команды Мы проектировали  свой код
-              так, чтобы любому человеку
-              было интуитивно понятно
-              как вводить командыМы проектировали  свой код
-              так, чтобы любому человеку
-              было интуитивно понятно
-              как вводить команды Мы проектировали  свой код
-              так, чтобы любому человеку
-              было интуитивно понятно
-              как вводить команды Мы проектировали  свой код
-              так, чтобы любому человеку
-              было интуитивно понятно
-              как вводить командыМы проектировали  свой код
-              так, чтобы любому человеку
-              было интуитивно понятно
-              как вводить команды Мы проектировали  свой код
-              так, чтобы любому человеку
-              было интуитивно понятно
-              как вводить команды Мы проектировали  свой код
-              так, чтобы любому человеку
-              было интуитивно понятно
-              как вводить команды`},
-              { zagolovok: "Описание процесса номер 2",text: `Мы проектировали  свой код
-              так, чтобы любому человеку
-              было интуитивно понятно
-              как вводить команды`},
-              {  zagolovok: "Описание процесса номер 3",text: `Мы проектировали  свой код
-              так, чтобы любому человеку
-              было интуитивно понятно
-              как вводить команды`},
-              {  zagolovok: "Описание процесса номер 4",text: `Мы проектировали  свой код
-              так, чтобы любому человеку
-              было интуитивно понятно
-              как вводить команды`}, 
-          ],
-        },
-        mounted: function() {
-        let top = 5;
-        let left = 10;
-        if (screen.width < 1000) {
-          left =0;
-        }
+    //   new Vue({
+    //     el: '.offer',
+    //     data: {
+    //       offers: [
+    //           {  zagolovok: "Описание процесса номер 1",text: `Мы проектировали  свой код
+    //           так, чтобы любому человеку
+    //           было интуитивно понятно
+    //           как вводить команды Мы проектировали  свой код
+    //           так, чтобы любому человеку
+    //           было интуитивно понятно
+    //           как вводить команды Мы проектировали  свой код
+    //           так, чтобы любому человеку
+    //           было интуитивно понятно
+    //           как вводить командыМы проектировали  свой код
+    //           так, чтобы любому человеку
+    //           было интуитивно понятно
+    //           как вводить команды Мы проектировали  свой код
+    //           так, чтобы любому человеку
+    //           было интуитивно понятно
+    //           как вводить команды Мы проектировали  свой код
+    //           так, чтобы любому человеку
+    //           было интуитивно понятно
+    //           как вводить командыМы проектировали  свой код
+    //           так, чтобы любому человеку
+    //           было интуитивно понятно
+    //           как вводить команды Мы проектировали  свой код
+    //           так, чтобы любому человеку
+    //           было интуитивно понятно
+    //           как вводить команды Мы проектировали  свой код
+    //           так, чтобы любому человеку
+    //           было интуитивно понятно
+    //           как вводить команды`},
+    //           { zagolovok: "Описание процесса номер 2",text: `Мы проектировали  свой код
+    //           так, чтобы любому человеку
+    //           было интуитивно понятно
+    //           как вводить команды`},
+    //           {  zagolovok: "Описание процесса номер 3",text: `Мы проектировали  свой код
+    //           так, чтобы любому человеку
+    //           было интуитивно понятно
+    //           как вводить команды`},
+    //           {  zagolovok: "Описание процесса номер 4",text: `Мы проектировали  свой код
+    //           так, чтобы любому человеку
+    //           было интуитивно понятно
+    //           как вводить команды`}, 
+    //       ],
+    //     },
+    //     mounted: function() {
+    //     let top = 5;
+    //     let left = 10;
+    //     if (screen.width < 1000) {
+    //       left =0;
+    //     }
         
-         document.querySelectorAll('.offer-block').forEach(item => {
-            top += 5;
-            left += 5;
-            item.style.top = top + "%";
-            item.style.left = left + "%";
+    //      document.querySelectorAll('.offer-block').forEach(item => {
+    //         top += 5;
+    //         left += 5;
+    //         item.style.top = top + "%";
+    //         item.style.left = left + "%";
            
-         });
-        },
-        methods: {
-          clearHover : clearHover
-        }
-    })
+    //      });
+    //     },
+    //     methods: {
+    //       clearHover : clearHover
+    //     }
+    // })
 
     let preloaderWidth = 500;
     let preloaderHeight = 500;
@@ -574,6 +572,7 @@ window.addEventListener('load',function () {
        
            let form_itself = item.parentElement;
            let description = form_itself.parentElement.querySelector('.description');
+           let zagolovok = document.querySelector(".form-section .zagolovok");
            
             var formData = new FormData(form);
 
@@ -593,6 +592,7 @@ window.addEventListener('load',function () {
 
               description.classList.remove('hide');
               form_itself.classList.add('hide');
+              zagolovok.style.display = "none";
 
               if (form_itself.classList.contains('complicated')) {
                 
