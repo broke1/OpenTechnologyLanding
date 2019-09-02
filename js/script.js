@@ -160,7 +160,7 @@ window.addEventListener('load',function () {
          let current_scroll = window.pageYOffset;
 
         
-         current_scroll == 0 ? menu_block.style.background = "transparent" : menu_block.style.background = "rgba(54, 169, 225, 0.5)"
+         current_scroll == 0 ? menu_block.style.background = "transparent" : menu_block.style.background = "#1E2649"
          current_scroll == 0 ? menu_block.querySelector(".container").style = "margin: 50px auto" : menu_block.querySelector(".container").style = "margin: 10px auto"
  
           if (current_scroll > last_scroll) {
