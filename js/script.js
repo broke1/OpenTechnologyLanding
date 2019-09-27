@@ -10,7 +10,7 @@ window.addEventListener('load',function () {
           menus: [
             {
               label: 'О продукте',
-              url: '.behind-block'
+              url: '.razdelitel'
             },
             {
               label: 'Кейсы',
@@ -104,8 +104,8 @@ window.addEventListener('load',function () {
               `
             },
             {
-              img: "img/img-about-1.png",
-              zagolovok: "НЕ БЫТЬ <br> ВТОРЫМ! ",
+              img: "img/img-about-4.png",
+              zagolovok: "НЕ БЫТЬ ВТОРЫМ! ",
               text: `
               В методике и SML реализован ряд сценариев, позволяющих описывать режимы нормального функционирования объектов, 
               что позволяет выявлять и прогнозировать отказы даже в том случае, когда таких отказов не наблюдалось в истории.`
@@ -262,36 +262,69 @@ window.addEventListener('load',function () {
           el: '.achivment',
           data: {
             achivments: [
-                { img: "img/achivment.png", zagolovok: "Коллективная <br> безопасность"},
-                { img: "img/achivment.png", zagolovok: "Искусственный <br> интеллект"},
-                { img: "img/achivment.png", zagolovok: "Опыт <br> экспертов"},
+                { img: "img/achivment-1.png", zagolovok: "Коллективная <br> безопасность"},
+                { img: "img/achivment-2.png", zagolovok: "Искусственный <br> интеллект"},
+                { img: "img/achivment-3.png", zagolovok: "Опыт <br> экспертов"},
             ],
           }
       })
 
-      new Vue({
+    let projects_obj =   new Vue({
         el: '.project-block',
         data: {
           projects: [
-              { click: false, text: "Мы проектировали свой код так, чтобы любому человеку было интуитивно понятно как вводить команды", zagolovok: "ПРОГНОЗИРОВАНИЕ <br> ОТКАЗОВ В ИТ"},
-              { click: false, text: "Мы проектировали свой код так, чтобы любому человеку было интуитивно понятно как вводить команды", zagolovok: "ПРОГНОЗИРОВАНИЕ <br> ОТКАЗОВ В Oil&Gas"},
-              { click: false, text: "Мы проектировали свой код так, чтобы любому человеку было интуитивно понятно как вводить команды", zagolovok: "ПРОГНОЗИРОВАНИЕ <br> ОТКАЗОВ В ЭНЕРГЕТИКЕ"},
-              { click: false, text: "Мы проектировали свой код так, чтобы любому человеку было интуитивно понятно как вводить команды", zagolovok: "ПРОГНОЗИРОВАНИЕ <br> ОТКАЗОВ В ТРАНСПОРТЕ"},
+              { click: false,
+                text: `С помощью платформы Atlas можно выполнять долгосрочное прогнозирование достаточности ресурсов IT-инфраструктуре или же выполнять краткосрочное прогнозирование
+                      IT-инцидентов `, 
+                text_full: `С помощью платформы Atlas можно выполнять долгосрочное прогнозирование достаточности ресурсов IT-инфраструктуре вследствие роста бизнеса или же выполнять краткосрочное прогнозирование
+                            IT-инцидентов на основе выявленных устойчивых взаимодействий между компонентами системы.
+                            В качестве заказчиков могут выступать объекты 
+                            с крупной и развитой IT-инфраструктурой: системы, управляющие промышленными предприятиями, банки, телеком-операторы. 
+                            Atlas выявляет глубокие зависимости между бизнес-метриками, описывающими внешнюю поступающую нагрузку на IT-системы, 
+                            и инфраструктурными метриками, непосредственно выражающими загруженность элементов (серверов, кластеров, сетевого оборудования).
+                              В результате работы системы заказчик получает рекомендации по балансировке оборудования, оценку недостающих ресурсов, 
+                              инструмент для what-if анализа и раннего определения развивающегося инцидента.`,
+                zagolovok: "IT-инфраструктура"},
+              { click: false,
+                text: "Платформа Atlas позволяет выполнять прогнозирование отказов / аварий на критичных объектах железнодорожной инфраструктуры",
+                text_full: `Платформа Atlas позволяет выполнять прогнозирование отказов / аварий на критичных объектах железнодорожной инфраструктуры:
+                      это могут быть как непосредственно объекты, осуществляющие перевозку (например, локомотивы), 
+                      так и объекты обеспечивающей инфраструктуры (станции, ремонтные депо и пр.). Подобный подход в перспективе позволит перейти от планового 
+                      технического обслуживания (сейчас это регламентные времена и пробеги между ТО) к обслуживанию по фактическому техническому состоянию. 
+                      Прогнозирование отказов локомотивов также позволит заранее готовить подменные локомотивы на смену ушедшим на ТО, что приведет к оптимизации
+                        перевозок и сокращению времени простоев поездов.`,
+                zagolovok: "Логистика и перевозки"},
+              { click: false,
+                text: "С помощью Atlas можно выполнять прогнозирование “неблагоприятного стечения обстоятельств” на критичных станциях и узлах энергетической инфраструктуры.", 
+                text_full: `С помощью Atlas можно выполнять прогнозирование “неблагоприятного стечения обстоятельств” на критичных станциях и узлах энергетической инфраструктуры.
+                      Для этой отрасли наиболее применим принцип “коллективной безопасности”, так как здесь присутствует большое количество похожих,
+                        однотипных объектов моделирования, по которым можно собрать обширную общую статистику по особенностям режимов работы и моментам отказов.`,
+                zagolovok: "Энергетика"},
+              { click: false, 
+                text: "Объекты нефтегазовой отрасли традиционно сложны для моделирования с помощью математических методов", 
+                text_full: `Объекты нефтегазовой отрасли традиционно сложны для моделирования с помощью математических методов: 
+                        дифференциальными уравнениями или переходными процессами. Но большое количество однотипных объектов (газоперекачивающих агрегатов, скважин и т.п.) 
+                        позволяет собрать обширную статистику по особенностям режимов работы объектов в разных условиях и составить устойчивую модель нормального функционирования
+                        и взаимосвязи показателей процессов. Кроме того, большое количество экспертов в предметной области позволяет учитывать их опыт при итерационном построении
+                          и валидации моделей, что является одной из важных особенной Atlas. С помощью “цифрового выражения” знаний экспертов Atlas уточняет свои прогностические модели,
+                          что позволяет более точно выявлять предикторы отказов и аварий.`,
+                zagolovok: "Oil & Gas"},
           ],
         }
     })
 
-    document.querySelectorAll(".project-itself").forEach( item => {
+    document.querySelectorAll(".project-itself").forEach( (item,i) => {
             item.addEventListener('click', () => {
                 item.classList.add("project-full-itself");
-                
+                projects_obj.projects[i].click = true;
             });
     });
 
-    document.querySelectorAll(".close-btn-project").forEach( item => {
+    document.querySelectorAll(".close-btn-project").forEach( (item,i) => {
       item.addEventListener('click', (event) => {
           event.stopPropagation(); 
           item.parentElement.classList.remove("project-full-itself");
+          projects_obj.projects[i].click = false;
           
       });
     });
@@ -305,16 +338,17 @@ window.addEventListener('load',function () {
           
               <div class="modal-form-itself">
                   <form action="/send/send.php" :class="settings.class_name" name="modal">
-                      <div class="close-btn" v-if="settings.close_seen">X</div>
+                      <div class="close-btn" v-if="settings.close_seen"></div>
                       <p class="zagolovok-form" v-if="settings.zagolovok_seen">{{settings.zagolovok}}</p>
                       <input type="text" name="name" placeholder="Имя" class="form-item">
-                      <input type="text" name="phone" class="phone-form-modal form-item"  placeholder="Телефон" >
+                      <!-- <input type="text" name="phone" class="phone-form-modal form-item"  placeholder="Телефон" > -->
+                      <input type="text" name="email" class="email-form-modal form-item"  placeholder="E-mail" >
                       
                       <div class="accept-block">
                         <input :id="settings.id" type="checkbox" name="accept" value="male">
-                        <label :for="settings.id">Согласие на обработку  персональных данных</label>
+                        <label :for="settings.id">Согласие на отправку обратного письма</label>
                       </div> 
-                      <div class="description-accept hide">Согласитесь с обработкой данных</div>
+                      <div class="description-accept hide">Согласитесь с отправкой письма</div>
                       <div  class="button-send-modal  form-item" >Заказать</div>
                   </form>
                   <div class="description hide">{{settings.description}}</div>
@@ -353,7 +387,7 @@ window.addEventListener('load',function () {
     })
     
 
-    $(".phone-form-modal").mask("+7 (999) 999-99-99");
+   // $(".phone-form-modal").mask("+7 (999) 999-99-99");
 
 
 
@@ -475,16 +509,16 @@ window.addEventListener('load',function () {
     }
 
     
-    //  new Vue ({
-    //   el: '.preloader-canvas',
-    //   data: {
-    //     width: preloaderWidth,
-    //     height: preloaderHeight
-    //   },
-    //   mounted: function() {
-    //     createPreloader();
-    //   }
-    // });
+     new Vue ({
+      el: '.preloader-canvas',
+      data: {
+        width: preloaderWidth,
+        height: preloaderHeight
+      },
+      mounted: function() {
+        createPreloader();
+      }
+    });
 
     
    
@@ -532,7 +566,8 @@ window.addEventListener('load',function () {
           let accept = parrent.querySelector('input[type="checkbox"]');
           let description = parrent.querySelector('.description-accept');
           if (accept.checked) { 
-            sendModal(document.forms.modal,item);
+           // console.log(parrent);
+            sendModal(parrent,item);
             }  else {
               description.classList.remove('hide');
               setTimeout(() =>{
@@ -575,6 +610,8 @@ window.addEventListener('load',function () {
            let zagolovok = document.querySelector(".form-section .zagolovok");
            
             var formData = new FormData(form);
+            
+            
 
 
             var xhr = new XMLHttpRequest();
@@ -590,7 +627,24 @@ window.addEventListener('load',function () {
             
          
 
-              description.classList.remove('hide');
+            //   description.classList.remove('hide');
+            //   form_itself.classList.add('hide');
+            //   zagolovok.style.display = "none";
+
+            //   if (form_itself.classList.contains('complicated')) {
+                
+            //     setTimeout(() =>{
+            //       form_itself.parentElement.parentElement.classList.remove('modal-form-show');
+            //     }, 2000);
+            //   }
+
+ 
+            return;
+            } else {
+              //console.log(this.responseText);
+
+
+               description.classList.remove('hide');
               form_itself.classList.add('hide');
               zagolovok.style.display = "none";
 
@@ -600,14 +654,8 @@ window.addEventListener('load',function () {
                   form_itself.parentElement.parentElement.classList.remove('modal-form-show');
                 }, 2000);
               }
-
- 
-            return;
-            } else {
-              console.log(this.responseText);
-
-              description.classList.remove('hide');
-              form_itself.classList.add('hide');
+              
+              
             //   setTimeout(()=>{
             //       document.querySelector('.modal-form').style.opacity = "0";
             //       document.querySelector('.modal-form').style.visibility = "hidden";

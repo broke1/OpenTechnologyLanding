@@ -24,18 +24,18 @@ class SendForms {
     public function sendmail() {
 
 
-          echo $_POST;
+         // print_r($_POST);
            
              
            
-        //  if ($this->name != '') {
-        //     $this->name = htmlspecialchars($this->name);
-        //     $this->name = trim($this->name);
-        //  }
-        //  if ($this->email != '') {
-        //     $this->email = htmlspecialchars($this->email);
-        //     $this->email = trim($this->email);
-        //  }
+         if ($this->name != '') {
+            $this->name = htmlspecialchars($this->name);
+            $this->name = trim($this->name);
+         }
+         if ($this->email != '') {
+            $this->email = htmlspecialchars($this->email);
+            $this->email = trim($this->email);
+         }
         //  if ($this->phone != '') {
         //     $this->phone = htmlspecialchars($this->phone);
         //     $this->phone = trim($this->phone);
@@ -45,7 +45,7 @@ class SendForms {
         //     $this->text = trim($this->text);
         //  }
 
-        //  mail($this->to_mail, "Хочу записаться", "Мое имя:   ".$this->name." \r\nМой телефон:   ".$this->phone,"From: artmemaster.ru \r\n"."Content-type: text/plain; charset=UTF-8\r\n");
+         mail($this->to_mail, "Заказ демонстрации", "Мое имя:   ".$this->name." \r\nМоя почта:   ".$this->email,"From: isg-neuro.ru \r\n"."Content-type: text/plain; charset=UTF-8\r\n");
         
     
         
@@ -156,7 +156,7 @@ if ($_POST['email']) {
     }
     
 
-$send->to_mail = "artmemaster@yandex.ru";
+$send->to_mail = "demo@isg-neuro.ru";
 // bykova@antivor.ru
 $send->name_of_site = "";
 $send->sendmail();
