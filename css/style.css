@@ -1110,8 +1110,8 @@ body {
   height: 4px;
   background: #36A9E1;
   border-radius: 10px;
-  -webkit-transform: translate(-3px, 5px) rotate(45deg);
-          transform: translate(-3px, 5px) rotate(45deg);
+  -webkit-transform: translate(-3px, 6px) rotate(45deg);
+          transform: translate(-3px, 6px) rotate(45deg);
 }
 
 .how-do .our-project .container .obertka-block .project-block .project-itself .close-btn-project:before {
