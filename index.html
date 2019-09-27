@@ -134,7 +134,7 @@
                                             <div class="left-block">
                                                 <div class="zagolovok" v-html="project.zagolovok"></div>
                                                 <div class="text-project" v-if="project.click==false" v-html="project.text"></div>
-                                                <div class="text-project" v-if="project.click" v-html="project.text_full"></div>
+                                                <div class="text-project text-project-full" v-if="project.click" v-html="project.text_full"></div>
                                             </div>
                                             
                                         </div>
@@ -190,9 +190,9 @@
             <modal-form  :settings="settings"></modal-form>
         </div>
     </article>
-     <article class="preloader">
+     <!-- <article class="preloader">
         <canvas class="preloader-canvas" :width="width" :height="height" ></canvas>
-    </article> 
+    </article>  -->
     
     <!-- Yandex.Metrika counter -->
 <script type="text/javascript" >

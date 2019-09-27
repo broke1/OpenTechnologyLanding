@@ -980,6 +980,10 @@ body {
   z-index: 2;
 }
 
+.how-do .our-project .container .obertka-block .project-block .project-itself .content-inside .left-block .text-project-full {
+  width: 750px;
+}
+
 .how-do .our-project .container .obertka-block .project-block .project-itself .content-inside .right-block {
   display: none;
 }
@@ -1179,6 +1183,10 @@ body {
   text-align: justify;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
+}
+
+.how-do .our-project .container .obertka-block .project-block .project-full-itself .content-inside .left-block .text-project-full {
+  width: 750px;
 }
 
 .how-do .our-project .container .obertka-block .project-block .project-full-itself .content-inside .right-block {
